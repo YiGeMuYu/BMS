@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.muyu.bms.mapper.UserMapper">
+    <!--List<User> queryAllUser();-->
+    <select id="queryAllUser" resultType="User">
+        select * from bms_user
+    </select>
+    <!--User queryUserById(int id);-->
+    <select id="queryUserById" resultType="User">
+        select * from bms_user where id=#{id}
+    </select>
+    <!--User queryUserByUsername(String username);-->
+    <select id="queryUserByUsername" resultType="user">
+        select * from bms_user where username=#{username}
+    </select>
+    <!--User queryUserByUsernameAndPassword(String username ,String password);-->
+    <select id="queryUserByUsernameAndPassword" resultType="User">
+        select * from bms_user where username=#{username} and password=#{password}
+    </select>
+
+
+
+    <!--int addUser(User user);-->
+    <insert id="addUser" parameterType="User">
+        insert into bms_user(username,password,rank,email) values(#{User.username},#{User.password},#{User.rank},#{User.email})
+    </insert>
+
+
+    <!--int updateUser(User user);-->
+    <update id="updateUser" parameterType="User">
+        update bms_user SET
+        username=#{user.username},password=#{user.password},rank=#{user.rank},email=#{user.email}
+        where id=#{user.id}
+    </update>
+
+    <!--int updateUserRank(@Param("id") int id);-->
+    <update id="updateUserRank" parameterType="Integer">
+        UPDATE  bms_user SET
+        rank=99
+        WHERE id=#{id}
+    </update>
+    <!--int deleteUser(int id);-->
+    <delete id="deleteUser" parameterType="int">
+        delete from bms_user
+        where id=#{id}
+    </delete>
+</mapper>

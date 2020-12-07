@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="bms@39.96.71.158">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="bms">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="shunda"/>
+    <schema id="7" parent="1" name="test"/>
+    <table id="8" parent="2" name="bms_book"/>
+    <table id="9" parent="2" name="bms_borrow"/>
+    <table id="10" parent="2" name="bms_student"/>
+    <table id="11" parent="2" name="bms_user"/>
+    <column id="12" parent="8" name="bid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="13" parent="8" name="bname">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="14" parent="8" name="type">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="15" parent="8" name="author">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="16" parent="8" name="picture">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="17" parent="8" name="inventory">
+      <Position>6</Position>
+      <DataType>int(255)|0</DataType>
+    </column>
+    <column id="18" parent="8" name="borrownum">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="19" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>bid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="20" parent="9" name="borrow_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="21" parent="9" name="sid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="22" parent="9" name="bid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="23" parent="9" name="borrow_time">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="24" parent="9" name="return_time">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="25" parent="9" name="borrow_statu">
+      <Position>6</Position>
+      <DataType>int(10)|0</DataType>
+    </column>
+    <index id="26" parent="9" name="bid_borrow_book_fk">
+      <ColNames>bid</ColNames>
+    </index>
+    <index id="27" parent="9" name="sid_borrow_student_fk">
+      <ColNames>sid</ColNames>
+    </index>
+    <key id="28" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>borrow_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="29" parent="9" name="sid_borrow_student_fk">
+      <ColNames>sid</ColNames>
+      <RefSchemaName>bms</RefSchemaName>
+      <RefTableName>bms_student</RefTableName>
+      <RefColNames>sid</RefColNames>
+    </foreign-key>
+    <foreign-key id="30" parent="9" name="bid_borrow_book_fk">
+      <ColNames>bid</ColNames>
+      <RefSchemaName>bms</RefSchemaName>
+      <RefTableName>bms_book</RefTableName>
+      <RefColNames>bid</RefColNames>
+    </foreign-key>
+    <column id="31" parent="10" name="sid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="32" parent="10" name="sname">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="33" parent="10" name="grade">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="34" parent="10" name="faculty">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="35" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>sid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="36" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="11" name="username">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="38" parent="11" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="39" parent="11" name="rank">
+      <Position>4</Position>
+      <DataType>int(255)|0</DataType>
+    </column>
+    <column id="40" parent="11" name="email">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="41" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

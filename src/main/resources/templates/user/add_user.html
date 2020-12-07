@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap-responsive.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/fullcalendar.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-style.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-media.css}" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/general.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery.gritter.css}" />
+    <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>-->
+    <style>
+        .alert{
+            padding:8px 12px 8px 14px;
+        }
+        .red{
+            border:1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    <!--
+        当前未实现正则表达式验证表单内容
+        需要验证的有以下几项
+        1.两次密码确认一致
+        2.rank级别不能为0
+        3.邮箱格式要正确
+        4.以上有一项未完成，则不可提交表单
+    -->
+    <!--引入头部和侧边栏-->
+    <div th:replace="commonts/bar::topbar"></div>
+    <div th:replace="commonts/bar::#sidebar"></div>
+    <!--主要内容-->
+    <div id="content">
+
+        <!--引入内容头部-->
+        <div th:replace="commonts/bar::#content-header"></div>
+        <div class="container-fluid">
+            <div class="widget-box">
+                <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+                    <h5>添加用户</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <form th:action="@{/user}" th:method="post" class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label">用户名 :</label>
+                            <div class="controls">
+                                <input type="text" class="span9" placeholder="User Name" name="username" id="username" onblur="checkUserRepetitive()"/>
+                                <span class="" id="userHint"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">密码 :</label>
+                            <div class="controls">
+                                <input type="password" class="span9" placeholder="Enter PassWord" name="password" id="password"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">确认密码 :</label>
+                            <div class="controls">
+                                <input type="password"  class="span9" placeholder="Confirm Password" id="confirmPassword" onblur="checkPasswordSame()"/>
+                                <span class="" id="passHint"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">级别 :</label>
+                            <div class="controls">
+                                <input type="text" class="span9" placeholder="rank" name="rank" id="rank" onblur="checkRank()"/>
+                                <span class="" id="rankHint"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">email :</label>
+                            <div class="controls">
+                                <input type="email" class="span9 form-control"  placeholder="email@example.com" name="email"/>
+                                <span class="help-block">请正确填写信息</span> </div>
+                        </div>
+                        <div class="form-actions">
+                            <input type="submit" th:value="确认" class="btn btn-success" onsubmit="return checkSubmit()">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function checkUserRepetitive() {
+        var username = $("#username").val()
+        var params = {"username":username}
+        $.post("/checkUserRepetitive",params,function (result) {
+            if(result){
+                $("#userHint").addClass("alert alert-danger")
+                $("#userHint").text("重复的用户名！")
+            }else{
+                $("#userHint").removeClass("alert alert-danger")
+                $("#userHint").text("")
+            }
+        })
+    }
+
+    function checkPasswordSame(){
+        var password = $("#password").val()
+        var confirmPassword = $("#confirmPassword").val()
+        if(password == confirmPassword){
+            $("#passHint").removeClass("alert alert-danger")
+            $("#passHint").text("")
+        }else{
+            $("#passHint").addClass("alert alert-danger")
+            $("#passHint").text("两次密码不一致！")
+        }
+    }
+
+    function checkRank(){
+        var rank = $("#rank").val()
+        if(rank!="") {
+            if (rank == 0) {
+                $("#rankHint").addClass("alert alert-danger")
+                $("#rankHint").text("用户权限不能为0")
+            } else {
+                $("#rankHint").removeClass("alert alert-danger")
+                $("#rankHint").text("")
+            }
+        }
+    }
+
+    function checkSubmit(){
+        return false
+    }
+</script>
+<script th:src="@{/js/excanvas.min.js}"></script>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/jquery.ui.custom.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery.flot.min.js}"></script>
+<script th:src="@{/js/jquery.flot.resize.min.js}"></script>
+<script th:src="@{/js/jquery.peity.min.js}"></script>
+<script th:src="@{/js/fullcalendar.min.js}"></script>
+<script th:src="@{/js/matrix.js}"></script>
+<script th:src="@{/js/matrix.dashboard.js}"></script>
+<script th:src="@{/js/jquery.gritter.min.js}"></script>
+<script th:src="@{/js/matrix.chat.js}"></script>
+<script th:src="@{/js/jquery.validate.js}"></script>
+<script th:src="@{/js/matrix.form_validation.js}"></script>
+<script th:src="@{/js/jquery.wizard.js}"></script>
+<script th:src="@{/js/jquery.uniform.js}"></script>
+<script th:src="@{/js/select2.min.js}"></script>
+<script th:src="@{/js/matrix.popover.js}"></script>
+<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+<script th:src="@{/js/matrix.tables.js}"></script>
+</html>

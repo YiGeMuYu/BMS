@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--头部导航-->
+<div th:fragment="topbar">
+    <div id="header">
+        <h1><a href="dashboard.html">MatAdmin</a></h1>
+    </div>
+    <!--close-Header-part-->
+    <div id="user-nav" class="navbar navbar-inverse">
+        <ul class="nav">
+            <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">欢迎[[${session.loginSession}]]</span><b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><i class="icon-user"></i> 我的资料</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#"><i class="icon-check"></i> 我的任务</a></li>
+                    <li class="divider"></li>
+                    <li><a href="login.html"><i class="icon-key"></i> 退出</a></li>
+                </ul>
+            </li>
+            <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">退出</span></a></li>
+        </ul>
+    </div>
+</div>
+
+<!--侧边栏-->
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> 控制台</a>
+    <ul>
+        <li th:class="${active=='index'?'active':''}"><a th:href="@{queryAllBookToIndex}"><i class="icon icon-home"></i> <span>查看书籍</span></a> </li>
+        <li th:class="${active=='addBook'?'active':''}"> <a th:href="@{addBook.html}"><i class="icon icon-signal"></i> <span>上架书籍</span></a> </li>
+        <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>修改书籍</span></a> </li>
+        <li><a href="tables.html"><i class="icon icon-th"></i> <span>下架书籍</span></a></li>
+        <li th:class="${active=='user'?'active':''}"> <a href="/toUserManagementPage"><i class="icon icon-th-list"></i> <span>用户管理</span> </a>
+            <!--<ul>-->
+            <!--<li><a href="form-common.html">查看用户</a></li>-->
+            <!--<li><a href="form-validation.html">添加用户</a></li>-->
+            <!--</ul>-->
+        </li>
+    </ul>
+</div>
+
+<!--内容头部-->
+<div id="content-header">
+    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a></div>
+</div>
+</body>
+</html>
