@@ -21,45 +21,45 @@
     <div class="container-fluid">
             <div class="widget-box">
                 <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-                    <h5>添加书籍</h5>
+                    <h5>修改书籍</h5>
                 </div>
                 <div class="widget-content nopadding">
-                    <form action="addBook" method="post" class="form-horizontal" enctype="multipart/form-data">
+                    <form action="updateBook" method="post" class="form-horizontal" enctype="multipart/form-data">
                         <div class="control-group">
                             <label class="control-label">书籍名称 :</label>
                             <div class="controls">
-                                <input type="text" class="span9" placeholder="书籍名称" name="bname"/>
+                                <input type="text" class="span9" placeholder="书籍名称" name="bname" th:value="${book.bname}"/>
                             </div>
                         </div>
 
                         <div class="control-group">
                             <label class="control-label">作者名称 :</label>
                             <div class="controls">
-                                <input type="text" class="span9" placeholder="作者名称" name="author"/>
+                                <input type="text" class="span9" placeholder="作者名称" name="author" th:value="${book.author}"/>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">库存 :</label>
                             <div class="controls">
-                                <input type="text" class="span9" placeholder="库存" name="inventory"/>
+                                <input type="text" class="span9" placeholder="库存" name="inventory" th:value="${book.inventory}"/>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">类型 :</label>
                             <div class="controls">
                                 <select class="form-control" name="type">
-                                    <option value="历史">历史</option>
-                                    <option value="小说">小说</option>
-                                    <option value="科幻">科幻</option>
-                                    <option value="文学">文学</option>
-                                    <option value="音乐">音乐</option>
-                                    <option value="工具">工具</option>
-                                    <option value="语言">语言</option>
+                                    <option th:selected="${book.type eq '历史'}" value="历史">历史</option>
+                                    <option th:selected="${book.type eq '小说'}" value="小说">小说</option>
+                                    <option th:selected="${book.type eq '科幻'}" value="科幻">科幻</option>
+                                    <option th:selected="${book.type eq '文学'}" value="文学">文学</option>
+                                    <option th:selected="${book.type eq '音乐'}" value="音乐">音乐</option>
+                                    <option th:selected="${book.type eq '工具'}" value="工具">工具</option>
+                                    <option th:selected="${book.type eq '语言'}" value="语言">语言</option>
                                 </select>
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label">上传封面 :</label>
+                            <label class="control-label">修改封面 :</label>
                             <div class="controls">
                                 <input type="file" name="pic" class="form-control-file" id="exampleFormControlFile1"/>
                             </div>

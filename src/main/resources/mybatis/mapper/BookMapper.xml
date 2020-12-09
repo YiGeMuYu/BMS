@@ -5,11 +5,15 @@
 <mapper namespace="com.muyu.bms.mapper.BookMapper">
     <!--boolean addBook(@Param("book") Book book);-->
     <insert id="addBook" parameterType="Book">
-        insert into bms_book(bname,author,type,inventory) VALUES(#{book.bname},#{book.author},#{book.type},#{book.inventory})
+        insert into bms_book(bname,author,type,inventory,picture) VALUES(#{book.bname},#{book.author},#{book.type},#{book.inventory},#{book.picture})
     </insert>
 
     <!--List<Book> queryAllBook();-->
     <select id="queryAllBook" resultType="Book">
         select * from bms_book
+    </select>
+    <!--Book queryBookById(@Param("bid") int bid);-->
+    <select id="queryBookById" resultType="Book">
+        select * from bms_book where bid=#{bid}
     </select>
 </mapper>

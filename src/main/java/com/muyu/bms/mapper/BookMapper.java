@@ -11,4 +11,6 @@ public interface BookMapper {
 	int addBook(@Param("book") Book book);
 
 	List<Book> queryAllBook();
+
+	Book queryBookById(@Param("bid") int bid);
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -15,8 +17,8 @@ public class BookController {
 	@Autowired
 	BookService bs;
 	@RequestMapping("addBook")
-	public String addBook(Book book){
-		if(bs.addBook(book)){
+	public String addBook(Book book, MultipartFile pic){
+		if(bs.addBook(book, pic)){
 			return "redirect:queryAllBookToIndex";
 		}
 		return "addBook";
@@ -27,5 +29,14 @@ public class BookController {
 		List<Book> books = bs.queryAllBook();
 		model.addAttribute("books",books);
 		return "index";
+	}
+
+	@RequestMapping("toUpdateBookPage")
+	public String toUpdatePage(@RequestParam("bid") int bid, Model model){
+
+		Book book = bs.queryBookById(bid);
+		model.addAttribute("book",book);
+		System.out.println(book);
+		return "book/updateBook";
 	}
 }
