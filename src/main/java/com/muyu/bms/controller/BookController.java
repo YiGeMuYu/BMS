@@ -33,10 +33,16 @@ public class BookController {
 
 	@RequestMapping("toUpdateBookPage")
 	public String toUpdatePage(@RequestParam("bid") int bid, Model model){
-
 		Book book = bs.queryBookById(bid);
 		model.addAttribute("book",book);
-		System.out.println(book);
 		return "book/updateBook";
+	}
+
+	@RequestMapping("updateBook")
+	public String updateBook(Book book ,MultipartFile pic){
+		if(bs.updateBook(book,pic)){
+			return "redirect:queryAllBookToIndex";
+		}
+		return "redirect:queryAllBookToIndex";
 	}
 }

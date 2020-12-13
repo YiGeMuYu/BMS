@@ -11,4 +11,6 @@ public interface BookService {
 	List<Book> queryAllBook();
 
 	Book queryBookById(int bid);
+
+	boolean updateBook(Book book ,MultipartFile pic);
 }

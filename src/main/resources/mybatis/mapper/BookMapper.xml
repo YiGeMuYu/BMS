@@ -16,4 +16,19 @@
     <select id="queryBookById" resultType="Book">
         select * from bms_book where bid=#{bid}
     </select>
+    <!--boolean updateBookById(@Param("book") Book book);-->
+    <update id="updateBookById">
+        update bms_book
+       <set>
+           bname=#{book.bname},
+           type=#{book.type},
+           author=#{book.author},
+           inventory=#{book.inventory},
+           <if test="book.picture != null and book.picture != ''">
+               picture=#{book.picture},
+           </if>
+
+       </set>
+        where bid=#{book.bid}
+    </update>
 </mapper>
