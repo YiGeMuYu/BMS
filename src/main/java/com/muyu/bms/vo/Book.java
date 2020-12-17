@@ -11,6 +11,16 @@ public class Book {
 	//借出去的图书数量
 	private int borrowNum;
 
+	private int bookStatus;
+
+	public int getBookStatus() {
+		return bookStatus;
+	}
+
+	public void setBookStatus(int bookStatus) {
+		this.bookStatus = bookStatus;
+	}
+
 	public int getBid() {
 		return bid;
 	}

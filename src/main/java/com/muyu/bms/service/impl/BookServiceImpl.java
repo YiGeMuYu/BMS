@@ -54,8 +54,11 @@ public class BookServiceImpl implements BookService {
 		return false;
 	}
 
-
-/*
+	@Override
+	public boolean soldBook(Integer bid) {
+		return bm.updateBookStatusById(bid);
+	}
+	/*
 *	工具方法
 */
 

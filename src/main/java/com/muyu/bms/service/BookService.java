@@ -13,4 +13,6 @@ public interface BookService {
 	Book queryBookById(int bid);
 
 	boolean updateBook(Book book ,MultipartFile pic);
+
+	boolean soldBook(Integer bid);
 }

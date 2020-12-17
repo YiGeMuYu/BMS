@@ -15,4 +15,6 @@ public interface BookMapper {
 	Book queryBookById(@Param("bid") int bid);
 
 	boolean updateBookById(@Param("book") Book book);
+
+	boolean updateBookStatusById(@Param("bid")int bid);
 }

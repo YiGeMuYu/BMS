@@ -45,4 +45,14 @@ public class BookController {
 		}
 		return "redirect:queryAllBookToIndex";
 	}
+
+	@RequestMapping("soldBook")
+	public String soldBook(@RequestParam("bid") Integer bid){
+		if(bs.soldBook(bid)) {
+			return "redirect:queryAllBookToIndex";
+		}else{
+			System.out.println("下架失败");
+			return "redirect:queryAllBookToIndex";
+		}
+	}
 }
