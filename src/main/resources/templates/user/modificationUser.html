@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap-responsive.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/fullcalendar.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-style.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-media.css}" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/general.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery.gritter.css}" />
+    <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>-->
+</head>
+<body>
+    <!--
+        当前未实现正则表达式验证表单内容
+        需要验证的有以下几项
+        1.两次密码确认一致
+        2.rank级别不能为0
+        3.邮箱格式要正确
+        4.以上有一项未完成，则不可提交表单
+    -->
+    <!--引入头部和侧边栏-->
+    <div th:replace="commonts/bar::topbar"></div>
+    <div th:replace="commonts/bar::#sidebar"></div>
+    <!--主要内容-->
+    <div id="content">
+
+        <!--引入内容头部-->
+        <div th:replace="commonts/bar::#content-header"></div>
+        <div class="container-fluid">
+            <div class="widget-box">
+                <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+                    <h5>修改用户</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <form th:action="@{/modificationUser}" th:method="post" class="form-horizontal">
+                        <input type="hidden" name="id" th:value="${user.id}">
+                        <div class="control-group">
+                            <label class="control-label">用户名 :</label>
+                            <div class="controls">
+                                <input type="text" class="span10" placeholder="User Name" name="username" th:value="${user.username}"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">密码 :</label>
+                            <div class="controls">
+                                <input type="text" class="span10" placeholder="Enter PassWord" name="password" th:value="${user.password}"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">级别 :</label>
+                            <div class="controls">
+                                <input type="text" class="span10" placeholder="rank" name="rank" th:value="${user.rank}"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">email :</label>
+                            <div class="controls">
+                                <input type="email" class="span10 form-control"  placeholder="email@example.com" name="email" th:value="${user.email}"/>
+                                <span class="help-block">请正确填写信息</span> </div>
+                        </div>
+                        <div class="form-actions">
+                            <input type="submit" th:value="确认" class="btn btn-success">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script th:src="@{/js/excanvas.min.js}"></script>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/jquery.ui.custom.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery.flot.min.js}"></script>
+<script th:src="@{/js/jquery.flot.resize.min.js}"></script>
+<script th:src="@{/js/jquery.peity.min.js}"></script>
+<script th:src="@{/js/fullcalendar.min.js}"></script>
+<script th:src="@{/js/matrix.js}"></script>
+<script th:src="@{/js/matrix.dashboard.js}"></script>
+<script th:src="@{/js/jquery.gritter.min.js}"></script>
+<script th:src="@{/js/matrix.chat.js}"></script>
+<script th:src="@{/js/jquery.validate.js}"></script>
+<script th:src="@{/js/matrix.form_validation.js}"></script>
+<script th:src="@{/js/jquery.wizard.js}"></script>
+<script th:src="@{/js/jquery.uniform.js}"></script>
+<script th:src="@{/js/select2.min.js}"></script>
+<script th:src="@{/js/matrix.popover.js}"></script>
+<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+<script th:src="@{/js/matrix.tables.js}"></script>
+</html>

@@ -17,4 +17,6 @@ public interface BookMapper {
 	boolean updateBookById(@Param("book") Book book);
 
 	boolean updateBookStatusById(@Param("bid")int bid);
+
+	List<Book> queryBookByLikeBookName(@Param("bookName") String bookName);
 }

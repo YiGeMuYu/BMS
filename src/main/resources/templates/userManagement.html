@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap-responsive.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/fullcalendar.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-style.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-media.css}" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/general.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery.gritter.css}" />
+    <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>-->
+</head>
+<body>
+    <!--引入头部和侧边栏-->
+    <div th:replace="commonts/bar::topbar"></div>
+    <div th:replace="commonts/bar::#sidebar(active='user')"></div>
+    <!--主要内容-->
+    <div id="content">
+        <!--引入内容头部-->
+        <div th:replace="commonts/bar::#content-header"></div>
+        <div class="container-fluid">
+            <div class="widget-box">
+                <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+                    <h5>用户列表</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <a class="btn btn-mini btn-success" th:href="@{/toAddUserPage}">添加用户</a>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>用户名</th>
+                            <th>密码</th>
+                            <th>级别</th>
+                            <th>邮箱</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="odd gradeX" th:each="user:${users}">
+                            <td th:text="${user.id}"></td>
+                            <td th:text="${user.username}"></td>
+                            <td th:text="${user.password}"></td>
+                            <td class="center"th:text="${user.rank}"></td>
+                            <td class="center" th:text="${user.email}"></td>
+                            <td class="center">
+                                <center>
+                                    <a class="btn btn-mini btn-primary" th:href="@{/toModificationUserPage(id=${user.id})}">修改</a>
+                                    <!--<a class="btn btn-mini btn-adanger"></a>-->
+                                    <form method="post" th:action="@{/deleteUser}" style="display: inline-block;" th:if="${user.id != 1}">
+                                        <input th:type="hidden" name="id" th:value="${user.id}">
+                                        <input type="submit" class="btn btn-mini btn-danger" value="禁止" />
+                                    </form>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script th:src="@{/js/excanvas.min.js}"></script>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/jquery.ui.custom.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery.flot.min.js}"></script>
+<script th:src="@{/js/jquery.flot.resize.min.js}"></script>
+<script th:src="@{/js/jquery.peity.min.js}"></script>
+<script th:src="@{/js/fullcalendar.min.js}"></script>
+<script th:src="@{/js/matrix.js}"></script>
+<script th:src="@{/js/matrix.dashboard.js}"></script>
+<script th:src="@{/js/jquery.gritter.min.js}"></script>
+<script th:src="@{/js/matrix.chat.js}"></script>
+<script th:src="@{/js/jquery.validate.js}"></script>
+<script th:src="@{/js/matrix.form_validation.js}"></script>
+<script th:src="@{/js/jquery.wizard.js}"></script>
+<script th:src="@{/js/jquery.uniform.js}"></script>
+<script th:src="@{/js/select2.min.js}"></script>
+<script th:src="@{/js/matrix.popover.js}"></script>
+<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+<script th:src="@{/js/matrix.tables.js}"></script>
+</html>

@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    username: mysql
+    password: fanxu123456
+    #serverTimezone 时区
+    url: jdbc:mysql://39.96.71.158:3306/bms?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#整合mybatis
+mybatis:
+  #别名设置
+  type-aliases-package: com.muyu.bms.vo
+  #设置xml文件mapper的位置  classpath：代表的是resources
+  mapper-locations: classpath:mybatis/mapper/*.xml

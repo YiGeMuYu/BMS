@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改图书</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <!--<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />-->
+    <!--<link rel="stylesheet" th:href="@{/css/bootstrap-grid.css}" />-->
+    <!--<link rel="stylesheet" th:href="@{/css/bootstrap-reboot.css}" />-->
+    <link rel="stylesheet" th:href="@{/css/bootstrap-responsive.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/fullcalendar.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-style.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-media.css}" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/jquery.gritter.css}" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+    <style>
+        #table{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div th:replace="/commonts/bar::topbar"></div>
+
+<div th:replace="/commonts/bar::#sidebar(active='updateBook')"></div>
+<div id="content">
+    <div th:replace="/commonts/bar::#content-header"></div>
+    <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+            <h5>修改书籍</h5>
+        </div>
+        <div class="widget-content nopadding">
+            <div class="form-horizontal">
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="text" class="span8" id="bookName" name="bookName" placeholder="请输入书籍名称" />
+                        <input type="submit" class="btn btn-success" value="查询" onclick="selectBookByLikeBookName()"/>
+                    </div>
+                </div>
+                <div class="form-actions disnone">
+                    <table class="table table-bordered table-striped" id="table">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>书籍名称</th>
+                            <th>作者</th>
+                            <th>库存</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function selectBookByLikeBookName(){
+        var bookName = $("#bookName").val();
+        var param = "bookName="+bookName;
+        $.post("/selectBookByLikeBookName",param,function (data) {
+            var jsonOBJ = eval("("+data+")");
+            var jsonOBJ1 = eval(data);
+            $("#table").show();
+            for(var i=0;i<jsonOBJ.length;i++){
+                var bname = jsonOBJ[i].bname;
+                var bid = jsonOBJ[i].bid;
+                var author = jsonOBJ[i].author;
+                var inventory = jsonOBJ[i].inventory;
+                $("#tbody").html("" +
+                "<tr>" +
+                    "<td><center>"+bid+"</center></td>" +
+                    "<td><center>"+bname+"</center></td>" +
+                    "<td><center>"+author+"</center></td>" +
+                    "<td><center>"+inventory+"</center></td>" +
+                    "<td><center><a href='toUpdateBookPage?bid="+bid+"'><button class='btn btn-mini btn-success'>修改</button></a></center></td>" +
+                "</tr>")
+            }
+        })
+    }
+
+</script>
+<script th:src="@{/js/excanvas.min.js}"></script>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/jquery.ui.custom.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery.flot.min.js}"></script>
+<script th:src="@{/js/jquery.flot.resize.min.js}"></script>
+<script th:src="@{/js/jquery.peity.min.js}"></script>
+<script th:src="@{/js/fullcalendar.min.js}"></script>
+<script th:src="@{/js/matrix.js}"></script>
+<script th:src="@{/js/matrix.dashboard.js}"></script>
+<script th:src="@{/js/jquery.gritter.min.js}"></script>
+<script th:src="@{/js/matrix.chat.js}"></script>
+<script th:src="@{/js/jquery.validate.js}"></script>
+<script th:src="@{/js/matrix.form_validation.js}"></script>
+<script th:src="@{/js/jquery.wizard.js}"></script>
+<script th:src="@{/js/jquery.uniform.js}"></script>
+<script th:src="@{/js/select2.min.js}"></script>
+<script th:src="@{/js/matrix.popover.js}"></script>
+<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+<script th:src="@{/js/matrix.tables.js}"></script>
+</body>
+</html>

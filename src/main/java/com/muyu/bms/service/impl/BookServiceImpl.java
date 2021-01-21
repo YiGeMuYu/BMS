@@ -16,52 +16,9 @@ import java.util.UUID;
 public class BookServiceImpl implements BookService {
 	@Autowired
 	BookMapper bm;
-	@Override
-	public boolean addBook(Book book, MultipartFile pic) {
-		transerterPictureFile(pic,book);
-		int i = bm.addBook(book);
-		if(i>0){
-			return true;
-		}
-		return false;
-	}
-
-	@Override
-	public List<Book> queryAllBook() {
-		List<Book> books = bm.queryAllBook();
-		for (Book book : books) {
-			String picture = book.getPicture();
-			book.setPicture(pictureUrlTransverter(picture));
-		}
-		return books;
-	}
-
-	@Override
-	public Book queryBookById(int bid) {
-		Book book = bm.queryBookById(bid);
-		book.setPicture(pictureUrlTransverter(book.getPicture()));
-		return book;
-	}
-	@Override
-	public boolean updateBook(Book book, MultipartFile pic) {
-		if(pic.getSize()>0) {
-			transerterPictureFile(pic, book);
-			System.out.println(book.getPicture());
-		}
-		if(bm.updateBookById(book)) {
-			return true;
-		}
-		return false;
-	}
-
-	@Override
-	public boolean soldBook(Integer bid) {
-		return bm.updateBookStatusById(bid);
-	}
 	/*
-*	工具方法
-*/
-
+	工具方法 start
+	*/
 	/**
 	 * 将图片读取的路径剪辑成可访问图片的路径，然后存到数据库
 	 * @param picture
@@ -98,5 +55,82 @@ public class BookServiceImpl implements BookService {
 			}
 		}
 	}
+
+	/**
+	 *删除文件
+	 * @param fileName
+	 * @return
+	 */
+	public boolean deleteFile(String fileName){
+		File file = new File(fileName);
+		if(!file.exists()){
+			System.out.println("删除文件失败："+fileName+"不存在！");
+			return false;
+		}else{
+			if(file.isFile()){
+				return file.delete();
+			}
+		}
+		return false;
+	}
+	/*
+	工具方法end
+	 */
+	@Override
+	public boolean addBook(Book book, MultipartFile pic) {
+		transerterPictureFile(pic,book);
+		int i = bm.addBook(book);
+		if(i>0){
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public List<Book> queryAllBook() {
+		List<Book> books = bm.queryAllBook();
+		for (Book book : books) {
+			String picture = book.getPicture();
+			book.setPicture(pictureUrlTransverter(picture));
+		}
+		return books;
+	}
+
+	@Override
+	public Book queryBookById(int bid) {
+		Book book = bm.queryBookById(bid);
+		book.setPicture(pictureUrlTransverter(book.getPicture()));
+		return book;
+	}
+	@Override
+	public boolean updateBook(Book book, MultipartFile pic) {
+		if(pic.getSize()>0) {
+			transerterPictureFile(pic, book);
+			System.out.println("------------修改后的图片------------");
+			System.out.println(book.getPicture());
+			System.out.println("------------删除------------");
+			String fileName="E:/code/IDEA code/BMS/src/main/resources/static/"+book.getBeforePicture();
+			if(deleteFile(fileName)){
+				System.out.println("删除"+fileName+"成功！");
+			}
+		}
+		if(bm.updateBookById(book)) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean soldBook(Integer bid) {
+		return bm.updateBookStatusById(bid);
+	}
+
+	@Override
+	public List<Book> queryBookByLikeBookName(String bookName) {
+		List<Book> books = bm.queryBookByLikeBookName(bookName);
+		return books;
+	}
+
+
 
 }

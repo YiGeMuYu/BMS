@@ -15,4 +15,6 @@ public interface BookService {
 	boolean updateBook(Book book ,MultipartFile pic);
 
 	boolean soldBook(Integer bid);
+
+	List<Book> queryBookByLikeBookName(String bookName);
 }

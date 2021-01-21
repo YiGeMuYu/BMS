@@ -6,12 +6,21 @@ public class Book {
 	private String type;
 	private String author;
 	private String picture;
+	private String beforePicture;
 	//库存
 	private int inventory;
 	//借出去的图书数量
 	private int borrowNum;
 
 	private int bookStatus;
+
+	public String getBeforePicture() {
+		return beforePicture;
+	}
+
+	public void setBeforePicture(String beforePicture) {
+		this.beforePicture = beforePicture;
+	}
 
 	public int getBookStatus() {
 		return bookStatus;
