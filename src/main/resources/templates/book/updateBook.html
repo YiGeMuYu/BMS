@@ -59,13 +59,11 @@
                             <label class="control-label">类型 :</label>
                             <div class="controls">
                                 <select class="form-control" name="type">
-                                    <option th:selected="${book.type eq '历史'}" value="历史">历史</option>
-                                    <option th:selected="${book.type eq '小说'}" value="小说">小说</option>
-                                    <option th:selected="${book.type eq '科幻'}" value="科幻">科幻</option>
-                                    <option th:selected="${book.type eq '文学'}" value="文学">文学</option>
-                                    <option th:selected="${book.type eq '音乐'}" value="音乐">音乐</option>
-                                    <option th:selected="${book.type eq '工具'}" value="工具">工具</option>
-                                    <option th:selected="${book.type eq '语言'}" value="语言">语言</option>
+                                    <option  th:selected="${book.type eq bookType.type}"
+                                             th:each="bookType:${bookTypes}"
+                                             th:value="${bookType.tid}"
+                                             th:text="${bookType.type}">
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -79,6 +77,7 @@
 </div>
 </body>
 <script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/matrix.js}"></script>
 <script>
     function show(f){
         var rd = new FileReader();//创建文件读取对象

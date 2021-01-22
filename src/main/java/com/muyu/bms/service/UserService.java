@@ -1,7 +1,6 @@
 package com.muyu.bms.service;
 
-import com.muyu.bms.vo.User;
-import org.apache.ibatis.annotations.Param;
+import com.muyu.bms.vo.User;;
 
 import java.util.List;
 

@@ -31,21 +31,32 @@
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> 控制台</a>
     <ul>
         <li th:class="${active=='index'?'active':''}"><a th:href="@{queryAllBookToIndex}"><i class="icon icon-home"></i> <span>查看书籍</span></a> </li>
-        <li th:class="${active=='addBook'?'active':''}"> <a th:href="@{addBook.html}"><i class="icon icon-signal"></i> <span>上架书籍</span></a> </li>
-        <li th:class="${active=='updateBook'?'active':''}"> <a th:href="@{toUpdateBook.html}"><i class="icon icon-inbox"></i> <span>修改书籍</span></a> </li>
-        <!--<li><a href="tables.html"><i class="icon icon-th"></i> <span>下架书籍</span></a></li>-->
-        <li th:class="${active=='user'?'active':''}"> <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>用户管理</span> </a>
-            <!--<ul>-->
-            <!--<li><a href="form-common.html">查看用户</a></li>-->
-            <!--<li><a href="form-validation.html">添加用户</a></li>-->
-            <!--</ul>-->
+
+        <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>图书管理</span> </a>
+            <ul>
+                <li th:class="${active=='addBook'?'active':''}"> <a th:href="@{queryBookTypeToAddBook}"><i class="icon icon-signal"></i> <span>上架书籍</span></a> </li>
+                <li th:class="${active=='updateBook'?'active':''}"> <a th:href="@{toUpdateBook.html}"><i class="icon icon-inbox"></i> <span>修改书籍</span></a> </li>
+            </ul>
+        </li>
+        <!--th:if="${session.rank=='manager'}"-->
+        <li class="submenu" > <a href="#"><i class="icon icon-th-list"></i> <span>用户管理</span> </a>
+            <ul>
+                <li th:class="${active=='user'?'active':''}" > <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>管理员账户</span> </a>
+                <li th:class="${active=='student'?'active':''}" > <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>学生账户</span> </a>
+            </ul>
+        </li>
+
         </li>
     </ul>
 </div>
 
 <!--内容头部-->
 <div id="content-header">
-    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a></div>
+    <div id="breadcrumb">
+        <a th:href="@{/queryAllBookToIndex}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+    </div>
+
 </div>
+
 </body>
 </html>

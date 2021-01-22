@@ -1,6 +1,9 @@
 package com.muyu.bms.controller;
 
+import com.muyu.bms.service.StudentService;
 import com.muyu.bms.service.UserService;
+import com.muyu.bms.vo.Student;
+import com.muyu.bms.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +18,8 @@ public class LoginController {
 	@Autowired
 	UserService userService;
 
+	@Autowired
+	StudentService studentService;
 	/**
 	 * 登录
 	 * 验证用户名和密码
@@ -33,6 +38,7 @@ public class LoginController {
 						HttpSession session){
 		if(userService.checkLogin(username,password)){
 			session.setAttribute("loginSession",username);
+			session.setAttribute("rank","manager");
 			return "redirect:queryAllBookToIndex";
 		}else{
 			model.addAttribute("loginErrMsg","用户名或密码错误!");
@@ -40,4 +46,19 @@ public class LoginController {
 		}
 
 	}
+
+	@RequestMapping("checkLoginStudent")
+	public String checkLoginStudent(@RequestParam("sid") int sid,
+									HttpSession session,
+									Model model){
+		Student student = studentService.checkLogin(sid);
+		if(student!=null){
+			session.setAttribute("loginSession",student.getSname());
+			session.setAttribute("rank","student");
+			return "redirect:queryAllBookToIndex";
+		}
+		model.addAttribute("loginErrMsg","学号错误!");
+		return "login";
+	}
+
 }

@@ -6,16 +6,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
-    <!--<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />-->
-    <!--<link rel="stylesheet" th:href="@{/css/bootstrap-grid.css}" />-->
-    <!--<link rel="stylesheet" th:href="@{/css/bootstrap-reboot.css}" />-->
     <link rel="stylesheet" th:href="@{/css/bootstrap-responsive.min.css}" />
     <link rel="stylesheet" th:href="@{/css/fullcalendar.css}" />
     <link rel="stylesheet" th:href="@{/css/matrix-style.css}" />
     <link rel="stylesheet" th:href="@{/css/matrix-media.css}" />
     <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/general.css}">
     <link rel="stylesheet" th:href="@{/css/jquery.gritter.css}" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
     <style>
         .bottomLine {
             border-bottom: 1px dotted #AEBDC8;
@@ -35,18 +32,40 @@
 
 <!--Action boxes-->
     <div class="container-fluid">
+
+
         <div class="widget-box">
             <div class="widget-title"> <span class="icon"> <i class="icon-file"></i> </span>
-                <h5>可借书籍</h5>
+                <div class="control-group">
+                    <!--<label class="control-label"></label>-->
+                    <div class="controls">
+                        <form action="/queryBookByKeyword" method="post">
+                            <span style="margin-left:3px;">搜索书籍 :</span>
+                            <select class="form-control" name="selectType"
+                                    style="padding: 0px 5px;margin-top: 5px;font-size: 12px; margin-left: 3px;width: 90px;">
+                                <!--<option  th:each="bookType:${bookTypes}" th:value="${bookType.tid}" th:text="${bookType.type}"></option>-->
+                                <option value="bname">书籍名称</option>
+                                <option value="author">作者名称</option>
+                            </select>
+                            <input type="text" class="span3" name="keyword" placeholder="支持模糊查询"
+                                   style="padding: 4px 4px; margin-top: 5px;  margin-left: 3px;font-size:12px;"/>
+
+                            <input class="btn btn-success" type="submit" value="查询"
+                                   style="margin-bottom: 5px;font-size: 12px;padding-left: 10px;
+                                   padding-right: 10px;height: 28px;line-height: 14px; margin-left: 3px;"/>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="widget-content nopadding">
+
                 <ul class="recent-posts" >
                     <li class="bottomLine" th:each="book:${books}" style="padding-bottom: 17px;">
                         <div class="article-post" style="height: 130px;">
                             <div class="user-thumb" style="width:90px; height: 130px;"> <img width="90" height="128" alt="User" th:src="@{${book.picture}}"> </div>
                             <p class="user-info" style="padding-top:30px;"><a href="#"><b>[[${book.bname}]] </b> &nbsp;&nbsp;&nbsp;  [[${book.author}]] </a> </p>
                             <p class="user-info" style="padding-top:20px;">库存：[[${book.inventory}]]件 可借阅</p>
-                            <div class="fr">
+                            <div class="fr" th:if="${session.rank=='manager'}">
                                 <a href="#" class="btn btn-success btn-mini">借出</a>
                                 <a th:href="@{toUpdateBookPage(bid=${book.bid})}" class="btn btn-primary btn-mini">修改</a>
                                 <button class="btn btn-danger btn-mini" onclick="confirmSold()">
@@ -72,27 +91,26 @@
 </div>
 
 <!--end-Footer-part-->
-
-<script th:src="@{/js/excanvas.min.js}"></script>
 <script th:src="@{/js/jquery.min.js}"></script>
-<script th:src="@{/js/jquery.ui.custom.js}"></script>
-<script th:src="@{/js/bootstrap.min.js}"></script>
-<script th:src="@{/js/jquery.flot.min.js}"></script>
-<script th:src="@{/js/jquery.flot.resize.min.js}"></script>
-<script th:src="@{/js/jquery.peity.min.js}"></script>
-<script th:src="@{/js/fullcalendar.min.js}"></script>
 <script th:src="@{/js/matrix.js}"></script>
-<script th:src="@{/js/matrix.dashboard.js}"></script>
-<script th:src="@{/js/jquery.gritter.min.js}"></script>
-<script th:src="@{/js/matrix.chat.js}"></script>
-<script th:src="@{/js/jquery.validate.js}"></script>
-<script th:src="@{/js/matrix.form_validation.js}"></script>
-<script th:src="@{/js/jquery.wizard.js}"></script>
-<script th:src="@{/js/jquery.uniform.js}"></script>
-<script th:src="@{/js/select2.min.js}"></script>
-<script th:src="@{/js/matrix.popover.js}"></script>
-<script th:src="@{/js/jquery.dataTables.min.js}"></script>
-<script th:src="@{/js/matrix.tables.js}"></script>
+<!--<script th:src="@{/js/excanvas.min.js}"></script>-->
+<!--<script th:src="@{/js/jquery.ui.custom.js}"></script>-->
+<!--<script th:src="@{/js/bootstrap.min.js}"></script>-->
+<!--<script th:src="@{/js/jquery.flot.min.js}"></script>-->
+<!--<script th:src="@{/js/jquery.flot.resize.min.js}"></script>-->
+<!--<script th:src="@{/js/jquery.peity.min.js}"></script>-->
+<!--<script th:src="@{/js/fullcalendar.min.js}"></script>-->
+<!--<script th:src="@{/js/matrix.dashboard.js}"></script>-->
+<!--<script th:src="@{/js/jquery.gritter.min.js}"></script>-->
+<!--<script th:src="@{/js/matrix.chat.js}"></script>-->
+<!--<script th:src="@{/js/jquery.validate.js}"></script>-->
+<!--<script th:src="@{/js/matrix.form_validation.js}"></script>-->
+<!--<script th:src="@{/js/jquery.wizard.js}"></script>-->
+<!--<script th:src="@{/js/jquery.uniform.js}"></script>-->
+<!--<script th:src="@{/js/select2.min.js}"></script>-->
+<!--<script th:src="@{/js/matrix.popover.js}"></script>-->
+<!--<script th:src="@{/js/jquery.dataTables.min.js}"></script>-->
+<!--<script th:src="@{/js/matrix.tables.js}"></script>-->
 
 <script type="text/javascript">
   // This function is called from the pop-up menus to transfer to
@@ -101,13 +119,13 @@
 
       // if url is empty, skip the menu dividers and reset the menu selection to default
       if (newURL != "") {
-      
+
           // if url is "-", it is this page -- reset the menu:
           if (newURL == "-" ) {
-              resetMenu();            
-          } 
-          // else, send page to designated URL            
-          else {  
+              resetMenu();
+          }
+          // else, send page to designated URL
+          else {
             document.location.href = newURL;
           }
       }

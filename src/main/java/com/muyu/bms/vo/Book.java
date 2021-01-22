@@ -1,7 +1,7 @@
 package com.muyu.bms.vo;
 
 public class Book {
-	private int bid;
+	private String bid;
 	private String bname;
 	private String type;
 	private String author;
@@ -30,11 +30,11 @@ public class Book {
 		this.bookStatus = bookStatus;
 	}
 
-	public int getBid() {
+	public String getBid() {
 		return bid;
 	}
 
-	public void setBid(int bid) {
+	public void setBid(String bid) {
 		this.bid = bid;
 	}
 

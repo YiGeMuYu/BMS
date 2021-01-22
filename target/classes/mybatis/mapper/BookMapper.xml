@@ -3,12 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.muyu.bms.mapper.BookMapper">
-    <!--<sql id="Base_Column_List">-->
-        <!--bid,bame,type,author,picture,inventory,borrownum,bookstatus-->
-    <!--</sql>-->
+    <sql id="Base_column_list">
+        bid,bname,type,author,picture,inventory,borrownum,bookstatus
+    </sql>
     <!--boolean addBook(@Param("book") Book book);-->
     <insert id="addBook" parameterType="Book">
-        insert into bms_book(bname,author,type,inventory,picture,bookstatus) VALUES(#{book.bname},#{book.author},#{book.type},#{book.inventory},#{book.picture},1)
+        insert into bms_book(bid,bname,author,type,inventory,picture,bookstatus) VALUES(#{book.bid},#{book.bname},#{book.author},#{book.type},#{book.inventory},#{book.picture},1)
     </insert>
 
     <!--List<Book> queryAllBook();-->
@@ -46,6 +46,32 @@
     <!--List<Book> queryBookByLikeBookName();-->
     <select id="queryBookByLikeBookName" resultType="Book">
         select * from bms_book
-        WHERE bname like #{bookName}
+        WHERE bname like '%${bookName}%'
     </select>
+
+    <!--int queryBookNumByType(@Param("type") String type);-->
+    <select id="queryBookNumByType" resultType="int">
+        select count(bid) num from bms_book where type=#{type};
+    </select>
+
+    <!--List<Book> queryBookByKeyword(@Param("selectType")String selectType, @Param("keyword")String keyword);-->
+    <select id="queryBookByKeyword" resultType="Book">
+        select *
+        from bms_book
+        where ${selectType} like '%${keyword}%'
+    </select>
+    <!--图书类型-->
+
+    <!--List<BookType> queryBookType();-->
+    <select id="queryBookType" resultType="BookType">
+        select tid,type from bms_booktype;
+    </select>
+
+    <!--BookType queryBookTypeByTid(@Param("tid") String tid);-->
+     <select id="queryBookTypeByTid" resultType="BookType">
+         select type from bms_booktype
+         where tid=#{tid};
+     </select>
+
+
 </mapper>

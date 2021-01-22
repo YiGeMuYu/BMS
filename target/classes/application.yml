@@ -12,3 +12,4 @@ mybatis:
   type-aliases-package: com.muyu.bms.vo
   #设置xml文件mapper的位置  classpath：代表的是resources
   mapper-locations: classpath:mybatis/mapper/*.xml
+

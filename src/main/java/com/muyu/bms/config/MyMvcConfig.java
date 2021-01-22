@@ -9,14 +9,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class MyMvcConfig implements WebMvcConfigurer{
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
+		//输入前边的urlPath可以访问后边的login，会自动补全.html，例如setViewName("login.html")
 		registry.addViewController("/toLoginPage").setViewName("login");
 		registry.addViewController("/login.html").setViewName("login");
 		registry.addViewController("/login").setViewName("login");
 		registry.addViewController("/").setViewName("login");
 		registry.addViewController("/index.html").setViewName("index");
-		registry.addViewController("/addBook.html").setViewName("book/addBook");
 		registry.addViewController("/toUpdateBook.html").setViewName("book/toUpdateBook");
-		registry.addViewController("/index.html").setViewName("index");
 	}
 
 	/**
