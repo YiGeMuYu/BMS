@@ -29,4 +29,6 @@ public interface BookMapper {
 
 	List<Book> queryBookByKeyword(@Param("selectType")String selectType, @Param("keyword")String keyword);
 
+	int updateBookInventoryAndBorrowNumById(@Param("bid") String bid);
+
 }

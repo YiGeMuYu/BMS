@@ -2,7 +2,7 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>修改图书</title>
+    <title>查询图书</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
     <!--<link rel="stylesheet" th:href="@{/css/bootstrap.css}" />-->
     <!--<link rel="stylesheet" th:href="@{/css/bootstrap-grid.css}" />-->
@@ -65,7 +65,6 @@
         var param = "bookName="+bookName;
         $.post("/selectBookByLikeBookName",param,function (data) {
             var jsonOBJ = eval("("+data+")");
-            var jsonOBJ1 = eval(data);
             $("#table").show();
             for(var i=0;i<jsonOBJ.length;i++){
                 var bname = jsonOBJ[i].bname;

@@ -3,10 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.muyu.bms.mapper.StudentMapper">
-
+    <sql id="Base_column_list">
+        sid,sname,grade,faculty
+    </sql>
   <!--Student queryStudentBySid(@Param("sid") int sid);-->
     <select id="queryStudentBySid" resultType="Student">
-        select sid,sname,grade,faculty from bms_student where sid=#{sid}
+        select <include refid="Base_column_list"/>
+        from bms_student where sid=#{sid}
     </select>
 
 </mapper>

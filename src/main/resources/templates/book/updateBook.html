@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>添加书籍</title>
+    <title>修改书籍信息</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
     <link rel="stylesheet" th:href="@{/css/bootstrap-responsive.min.css}" />
     <link rel="stylesheet" th:href="@{/css/fullcalendar.css}" />
@@ -30,7 +30,7 @@
 
                         <!--修改封面-->
                         <div class="control-group">
-                            <label class="control-label">上传封面 :</label>
+                            <label class="control-label">封面 :</label>
                             <div class="controls">
                                 <div id="display_none"><img th:src="@{${book.picture}}" alt="" width="90" height="128" /></div>
                                 <input type="file" name="pic" class="form-control-file" id="exampleFormControlFile1" onchange="show(this)"/>

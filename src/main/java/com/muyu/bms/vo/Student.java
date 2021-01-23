@@ -5,6 +5,15 @@ public class Student {
 	private String sname;
 	private String grade;
 	private String faculty;
+	private String studentBorrowStatus;
+
+	public String getStudentBorrowStatus() {
+		return studentBorrowStatus;
+	}
+
+	public void setStudentBorrowStatus(String studentBorrowStatus) {
+		this.studentBorrowStatus = studentBorrowStatus;
+	}
 
 	public int getSid() {
 		return sid;

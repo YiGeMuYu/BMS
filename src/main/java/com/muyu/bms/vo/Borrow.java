@@ -3,9 +3,10 @@ package com.muyu.bms.vo;
 public class Borrow {
 	private int borrowId;
 	private int sid;
-	private int bid;
+	private String bid;
 	private String borrowTime;
 	private String returnTime;
+	//借书的状态，0：已还，1已接，2逾期
 	private String borrowStatu;
 
 	public int getBorrowId() {
@@ -24,11 +25,11 @@ public class Borrow {
 		this.sid = sid;
 	}
 
-	public int getBid() {
+	public String getBid() {
 		return bid;
 	}
 
-	public void setBid(int bid) {
+	public void setBid(String bid) {
 		this.bid = bid;
 	}
 

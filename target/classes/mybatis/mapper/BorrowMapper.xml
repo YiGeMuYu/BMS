@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.muyu.bms.mapper.BorrowMapper">
+    <sql id="Base_column_list">
+        borrow_id,sid,bid,borrow_time,return_time,borrow_status
+    </sql>
+
+    <!--boolean borrowBook(@Param("borrow")Borrow borrow);-->
+    <insert id="borrowBook">
+        insert into bms_borrow(sid,bid,borrow_time)
+        VALUES (#{borrow.sid},#{borrow.bid},#{borrow.borrowTime})
+    </insert>
+</mapper>

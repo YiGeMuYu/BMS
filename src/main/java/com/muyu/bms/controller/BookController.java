@@ -34,7 +34,7 @@ public class BookController {
 		if(bookService.addBook(book, pic)){
 			return "redirect:queryAllBookToIndex";
 		}
-		return "addBook";
+		return "book/addBook";
 	}
 
 	//查询所有图书并且返回到index页面
@@ -93,4 +93,5 @@ public class BookController {
 		model.addAttribute("books",books);
 		return "index";
 	}
+
 }

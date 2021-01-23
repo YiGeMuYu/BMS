@@ -3,21 +3,28 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.muyu.bms.mapper.UserMapper">
+    <sql id="Base_column_list">
+        id,username,password,rank,email
+    </sql>
     <!--List<User> queryAllUser();-->
     <select id="queryAllUser" resultType="User">
-        select * from bms_user
+        select <include refid="Base_column_list"/>
+        from bms_user
     </select>
     <!--User queryUserById(int id);-->
     <select id="queryUserById" resultType="User">
-        select * from bms_user where id=#{id}
+        select <include refid="Base_column_list"/>
+        from bms_user where id=#{id}
     </select>
     <!--User queryUserByUsername(String username);-->
     <select id="queryUserByUsername" resultType="user">
-        select * from bms_user where username=#{username}
+        select <include refid="Base_column_list"/>
+        from bms_user where username=#{username}
     </select>
     <!--User queryUserByUsernameAndPassword(String username ,String password);-->
     <select id="queryUserByUsernameAndPassword" resultType="User">
-        select * from bms_user where username=#{username} and password=#{password}
+        select <include refid="Base_column_list"/>
+        from bms_user where username=#{username} and password=#{password}
     </select>
 
 

@@ -34,15 +34,20 @@
 
         <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>图书管理</span> </a>
             <ul>
-                <li th:class="${active=='addBook'?'active':''}"> <a th:href="@{queryBookTypeToAddBook}"><i class="icon icon-signal"></i> <span>上架书籍</span></a> </li>
-                <li th:class="${active=='updateBook'?'active':''}"> <a th:href="@{toUpdateBook.html}"><i class="icon icon-inbox"></i> <span>修改书籍</span></a> </li>
+                <li th:class="${active=='addBook'?'active':''}"> <a th:href="@{queryBookTypeToAddBook}"><i class="icon icon-signal"></i> <span>上架</span></a> </li>
+                <li th:class="${active=='updateBook'?'active':''}"> <a th:href="@{toUpdateBook.html}"><i class="icon icon-inbox"></i> <span>修改</span></a> </li>
+            </ul>
+        </li>
+        <li class="submenu" > <a href="#"><i class="icon icon-th-list"></i> <span>借阅管理</span> </a>
+            <ul>
+                <li th:class="${active=='borrowBook'?'active':''}" > <a th:href="@{toBorrowBook.html}"><i class="icon icon-th-list"></i> <span>借书</span> </a>
             </ul>
         </li>
         <!--th:if="${session.rank=='manager'}"-->
         <li class="submenu" > <a href="#"><i class="icon icon-th-list"></i> <span>用户管理</span> </a>
             <ul>
-                <li th:class="${active=='user'?'active':''}" > <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>管理员账户</span> </a>
-                <li th:class="${active=='student'?'active':''}" > <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>学生账户</span> </a>
+                <li th:class="${active=='user'?'active':''}" > <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>管理员</span> </a>
+                <li th:class="${active=='student'?'active':''}" > <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>学生</span> </a>
             </ul>
         </li>
 

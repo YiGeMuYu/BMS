@@ -40,18 +40,18 @@
                     <!--<label class="control-label"></label>-->
                     <div class="controls">
                         <form action="/queryBookByKeyword" method="post">
-                            <span style="margin-left:3px;">搜索书籍 :</span>
+                            <h5 style="display: inline-block;">查找书籍</h5>
                             <select class="form-control" name="selectType"
-                                    style="padding: 0px 5px;margin-top: 5px;font-size: 12px; margin-left: 3px;width: 90px;">
+                                    style="padding: 0px 5px;margin-top: 3px;font-size: 12px; margin-left: 3px;width: 90px;">
                                 <!--<option  th:each="bookType:${bookTypes}" th:value="${bookType.tid}" th:text="${bookType.type}"></option>-->
                                 <option value="bname">书籍名称</option>
                                 <option value="author">作者名称</option>
                             </select>
                             <input type="text" class="span3" name="keyword" placeholder="支持模糊查询"
-                                   style="padding: 4px 4px; margin-top: 5px;  margin-left: 3px;font-size:12px;"/>
+                                   style="padding: 4px 4px; margin-top: 3px;  margin-left: 3px;font-size:12px;"/>
 
                             <input class="btn btn-success" type="submit" value="查询"
-                                   style="margin-bottom: 5px;font-size: 12px;padding-left: 10px;
+                                   style="margin-bottom: 6px;font-size: 12px;padding-left: 10px;
                                    padding-right: 10px;height: 28px;line-height: 14px; margin-left: 3px;"/>
                         </form>
                     </div>
@@ -66,10 +66,10 @@
                             <p class="user-info" style="padding-top:30px;"><a href="#"><b>[[${book.bname}]] </b> &nbsp;&nbsp;&nbsp;  [[${book.author}]] </a> </p>
                             <p class="user-info" style="padding-top:20px;">库存：[[${book.inventory}]]件 可借阅</p>
                             <div class="fr" th:if="${session.rank=='manager'}">
-                                <a href="#" class="btn btn-success btn-mini">借出</a>
-                                <a th:href="@{toUpdateBookPage(bid=${book.bid})}" class="btn btn-primary btn-mini">修改</a>
+                                <a th:href="@{/queryBookToBorrowPage(bid=${book.bid})}" class="btn btn-success btn-mini">借出</a>
+                                <a th:href="@{/toUpdateBookPage(bid=${book.bid})}" class="btn btn-primary btn-mini">修改</a>
                                 <button class="btn btn-danger btn-mini" onclick="confirmSold()">
-                                    <a th:href="@{soldBook(bid=${book.bid})}" style="color:white">下架</a>
+                                    <a th:href="@{/soldBook(bid=${book.bid})}" style="color:white">下架</a>
                                 </button>
                             </div>
                         </div>
