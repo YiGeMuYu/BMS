@@ -24,7 +24,7 @@
     <div th:replace="commonts/bar::#sidebar(active='borrowBook')"></div>
     <div id="content">
 
-        <div th:replace="commonts/bar::#content-header"></div>
+        <div th:replace="commonts/bar::#content-header(page='借书')"></div>
         <form action="/borrowBook" method="post">
             <div class="row-fluid">
                 <div class="widget-box">

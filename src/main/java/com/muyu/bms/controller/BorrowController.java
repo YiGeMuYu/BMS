@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 public class BorrowController {
 
@@ -45,6 +47,17 @@ public class BorrowController {
 		return s;
 	}
 
+	//ajax异步查询学生信息
+	@RequestMapping("/queryStudentAndBorrowBookBySid")
+	@ResponseBody
+	public String queryStudentAndBorrowBookBySid(@RequestParam("sid") Integer sid){
+		List<Borrow> borrows = borrowService.queryBorrowBookListBySid(sid);
+		String s = JSONArray.fromObject(borrows).toString();
+		return s;
+	}
+
+
+	//借书
 	@RequestMapping("/borrowBook")
 	@ResponseBody
 	public String borrowBook(Borrow borrow){
@@ -54,4 +67,16 @@ public class BorrowController {
 			return "false";
 		}
 	}
+
+	//还书
+	@RequestMapping("/returnBook")
+	@ResponseBody
+	public String returnBook(@RequestParam("borrowId") int borrowId,@RequestParam("bid") String bid){
+		if(borrowService.returnBook(borrowId,bid)){
+			return "还书成功";
+		}else{
+			return "还书失败";
+		}
+	}
+
 }

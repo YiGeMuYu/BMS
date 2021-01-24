@@ -6,8 +6,17 @@ public class Borrow {
 	private String bid;
 	private String borrowTime;
 	private String returnTime;
-	//借书的状态，0：已还，1已接，2逾期
-	private String borrowStatu;
+	//借书的状态，0：已还，1已借，2逾期
+	private String borrowStatus;
+	private Book book;
+
+	public Book getBook() {
+		return book;
+	}
+
+	public void setBook(Book book) {
+		this.book = book;
+	}
 
 	public int getBorrowId() {
 		return borrowId;
@@ -50,11 +59,11 @@ public class Borrow {
 	}
 
 	public String getBorrowStatu() {
-		return borrowStatu;
+		return borrowStatus;
 	}
 
 	public void setBorrowStatu(String borrowStatu) {
-		this.borrowStatu = borrowStatu;
+		this.borrowStatus = borrowStatu;
 	}
 
 	@Override
@@ -62,10 +71,11 @@ public class Borrow {
 		return "Borrow{" +
 				"borrowId=" + borrowId +
 				", sid=" + sid +
-				", bid=" + bid +
+				", bid='" + bid + '\'' +
 				", borrowTime='" + borrowTime + '\'' +
 				", returnTime='" + returnTime + '\'' +
-				", borrowStatu='" + borrowStatu + '\'' +
+				", borrowStatus='" + borrowStatus + '\'' +
+				", book=" + book +
 				'}';
 	}
 }

@@ -17,7 +17,7 @@ public class UserController {
 	@RequestMapping("/toUserManagementPage")
 	public String toUserManagementPage(Model model){
 		model.addAttribute("users",userService.queryAllUser());
-		return "userManagement";
+		return "user/userManagement";
 	}
 
 	//转到用户添加页面

@@ -30,7 +30,9 @@
 <!--侧边栏-->
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> 控制台</a>
     <ul>
-        <li th:class="${active=='index'?'active':''}"><a th:href="@{queryAllBookToIndex}"><i class="icon icon-home"></i> <span>查看书籍</span></a> </li>
+        <li th:class="${active=='index'?'active':''}">
+            <a th:href="@{queryAllBookToIndex}"><i class="icon icon-home"></i> <span>查看书籍</span></a>
+        </li>
 
         <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>图书管理</span> </a>
             <ul>
@@ -40,18 +42,21 @@
         </li>
         <li class="submenu" > <a href="#"><i class="icon icon-th-list"></i> <span>借阅管理</span> </a>
             <ul>
-                <li th:class="${active=='borrowBook'?'active':''}" > <a th:href="@{toBorrowBook.html}"><i class="icon icon-th-list"></i> <span>借书</span> </a>
+                <li th:class="${active=='borrowBook'?'active':''}" > <a th:href="@{toBorrowBook.html}"><i class="icon icon-th-list"></i> <span>借书</span> </a></li>
+                <li th:class="${active=='returnBook'?'active':''}" > <a th:href="@{returnBook.html}"><i class="icon icon-th-list"></i> <span>还书</span> </a></li>
             </ul>
         </li>
         <!--th:if="${session.rank=='manager'}"-->
         <li class="submenu" > <a href="#"><i class="icon icon-th-list"></i> <span>用户管理</span> </a>
             <ul>
-                <li th:class="${active=='user'?'active':''}" > <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>管理员</span> </a>
-                <li th:class="${active=='student'?'active':''}" > <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>学生</span> </a>
+                <li th:class="${active=='user'?'active':''}" > <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>管理员</span> </a></li>
+                <li th:class="${active=='student'?'active':''}" > <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>学生</span> </a></li>
             </ul>
         </li>
-
+        <li th:class="${active=='queryDocument'?'active':''}">
+            <a th:href="@{queryDocument.html}"><i class="icon icon-home"></i> <span>查询文献</span></a>
         </li>
+
     </ul>
 </div>
 
@@ -59,6 +64,7 @@
 <div id="content-header">
     <div id="breadcrumb">
         <a th:href="@{/queryAllBookToIndex}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+        <a class="tip-bottom" th:text="${page}"></a>
     </div>
 
 </div>

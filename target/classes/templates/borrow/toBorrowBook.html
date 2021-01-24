@@ -26,10 +26,10 @@
 
 <div th:replace="/commonts/bar::#sidebar(active='updateBook')"></div>
 <div id="content">
-    <div th:replace="/commonts/bar::#content-header"></div>
+    <div th:replace="/commonts/bar::#content-header(page='借阅书籍查询')"></div>
     <div class="widget-box">
         <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-            <h5>查询需要借阅的书籍</h5>
+            <h5>借阅书籍查询</h5>
         </div>
         <div class="widget-content nopadding">
             <div class="form-horizontal">
@@ -63,23 +63,33 @@
     function selectBookByLikeBookName(){
         var bookName = $("#bookName").val();
         var param = "bookName="+bookName;
+        $(".childrenTr").remove();
         $.post("/selectBookByLikeBookName",param,function (data) {
             var jsonOBJ = eval("("+data+")");
-            var jsonOBJ1 = eval(data);
             $("#table").show();
             for(var i=0;i<jsonOBJ.length;i++){
                 var bname = jsonOBJ[i].bname;
                 var bid = jsonOBJ[i].bid;
                 var author = jsonOBJ[i].author;
                 var inventory = jsonOBJ[i].inventory;
-                $("#tbody").html("" +
-                "<tr>" +
+                $("#tbody").append("" +
+                "<tr class='childrenTr'>" +
                     "<td><center>"+bid+"</center></td>" +
                     "<td><center>"+bname+"</center></td>" +
                     "<td><center>"+author+"</center></td>" +
                     "<td><center>"+inventory+"</center></td>" +
                     "<td><center><a href='/queryBookToBorrowPage?bid="+bid+"'><button class='btn btn-mini btn-success'>借阅</button></a></center></td>" +
                 "</tr>")
+            }
+            if(jsonOBJ.length==0){
+                $("#tbody").append("" +
+                    "<tr class='childrenTr'>" +
+                    "<td><center>无</center></td>" +
+                    "<td><center>无</center></td>" +
+                    "<td><center>无</center></td>" +
+                    "<td><center>无</center></td>" +
+                    "<td><center></center></td>" +
+                    "</tr>")
             }
         })
     }

@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="68bc869f-0e1f-476d-afae-9436ed370c94" name="Default" comment="下架图书已完成&#10;target：侧边栏的下架图书，应该可以查询到下架了的图书">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/book/toUpdateBook.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/commonts/bar.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/commonts/bar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/muyu/bms/config/MyMvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/muyu/bms/config/MyMvcConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BMS.iml" afterPath="$PROJECT_DIR$/BMS.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/book/updateBook.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/book/updateBook.html" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/templates/user_management.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/userManagement.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/commonts/bar.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/commonts/bar.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,6 +20,11 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/BMS$BookManagementSystemApplication.coverage" NAME="BookManagementSystemApplication Coverage Results" MODIFIED="1610095196987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints>
+      <file url="file://$PROJECT_DIR$/src/test/java/com/muyu/bms/BookManagementSystemApplicationTests.java" />
+    </disable_hints>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -43,6 +48,12 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="bms@39.96.71.158" type="e3449647:DbNodeDescriptor" />
         <item name="bms" type="e3449647:DbNodeDescriptor" />
+        <item name="bms_borrow" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="bms@39.96.71.158" type="e3449647:DbNodeDescriptor" />
+        <item name="bms" type="e3449647:DbNodeDescriptor" />
         <item name="bms_user" type="e3449647:DbNodeDescriptor" />
       </path>
     </expand>
@@ -50,61 +61,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BorrowController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BorrowController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/BorrowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/BookMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="75" column="8" lean-forward="false" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="74" />
-              <folding>
-                <marker date="1611375727955" expanded="true" signature="437:607" ph="insert into bms_book... " />
-                <marker date="1611375727955" expanded="true" signature="718:793" ph="select * fro... bms_book" />
-                <marker date="1611375727955" expanded="true" signature="920:993" ph="select * fro... bms_book" />
-                <marker date="1611375727955" expanded="true" signature="1110:1443" ph="update bms_b... " />
-                <marker date="1611375727955" expanded="true" signature="1570:1635" ph="update bms_b... " />
-                <marker date="1611375727955" expanded="true" signature="1768:1863" ph="select from bms_book" />
-                <marker date="1611375727955" expanded="true" signature="1768:1865" ph="select * fro... bms_book" />
-                <marker date="1611375727955" expanded="true" signature="2006:2060" ph="select count... bms_book" />
-                <marker date="1611375727955" expanded="true" signature="2254:2364" ph="select from bms_book" />
-                <marker date="1611375727955" expanded="true" signature="2254:2366" ph="select from bms_book" />
-                <marker date="1611375727955" expanded="true" signature="2503:2536" ph="select tid,t... bms_booktype" />
-                <marker date="1611375727955" expanded="true" signature="2503:2537" ph="select tid,t... bms_booktype" />
-                <marker date="1611375727955" expanded="true" signature="2688:2743" ph="select type bms_booktype" />
-                <marker date="1611375727955" expanded="true" signature="2901:3039" ph="update bms_b... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/mapper/BookMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="412">
+              <caret line="44" column="79" lean-forward="false" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="79" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BorrowMapper.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BorrowServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/service/impl/BorrowServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="74" column="39" lean-forward="true" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BorrowMapper.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/BorrowMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="9" column="61" lean-forward="true" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+            <state relative-caret-position="262">
+              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
-                <marker date="1611375397123" expanded="true" signature="425:534" ph="insert into bms_borrow... " />
+                <marker date="1611461960941" expanded="true" signature="1775:1900" ph="insert into bms_borrow... " />
+                <marker date="1611461960941" expanded="true" signature="2070:2335" ph="select borro... bms_borrow" />
+                <marker date="1611461960941" expanded="true" signature="2070:2355" ph="select borro... bms_borrow" />
+                <marker date="1611461960941" expanded="true" signature="2466:2589" ph="update bms_b... " />
+                <marker date="1611461960941" expanded="true" signature="2740:2825" ph="select from bms_borrow" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BorrowMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/mapper/BorrowMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="borrowBook.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/borrow/borrowBook.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="132" column="26" lean-forward="false" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,19 +123,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>toUserManagementPage</find>
-      <find>queryAllBook</find>
-      <find>checkUserRepetitive</find>
-      <find>Base_Column_List</find>
-      <find>mod</find>
-      <find>modificationUser</find>
       <find>file</find>
       <find>img</find>
       <find>for</find>
@@ -152,6 +154,12 @@
       <find>name=&quot;sid&quot;</find>
       <find>name=</find>
       <find>updateBookById</find>
+      <find>toUserManagementPage</find>
+      <find>queryStudentBySid</find>
+      <find>queryStudentAndStudentBorrowStatusBySid</find>
+      <find>checkOverdueBySidcheckOverdueBySid</find>
+      <find>queryBorrowBySid</find>
+      <find>checkOverdueBySid</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,11 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/config/MyConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/UserVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/config/LoginHandlerIntercepor.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/spring-devtools.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/resources/META-INF/spring-devtools.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/general.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/user/modification_user.html" />
@@ -184,7 +187,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/mapper/stest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/user/add_user.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/book/aa.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/UserController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/service/impl/UserServiceImpl.java" />
@@ -194,8 +196,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/service/impl/StudentServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/BookType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/Book.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/book/addBook.html" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/service/BookService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
@@ -203,24 +203,32 @@
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/StudentMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/BookController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/userManagement.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/book/updateBook.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/Student.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/BookManagementSystemApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/borrow/borrowBook.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/book/addBook.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/book/updateBook.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/user/addUser.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/user/modificationUser.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/userManagement.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/config/MyMvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/commonts/bar.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/borrow/toBorrowBook.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/Student.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/book/toUpdateBook.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/borrow/borrowBook.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/queryDocument.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/Borrow.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/Book.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/mapper/BookMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/BookMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/borrow/returnBook.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/borrow/toBorrowBook.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/book/toUpdateBook.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/BorrowController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/muyu/bms/BookManagementSystemApplicationTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/service/BorrowService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/mapper/BorrowMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/BorrowController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/BorrowMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/BookMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/mapper/BookMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/BookManagementSystemApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/service/impl/BorrowServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/BorrowMapper.xml" />
       </list>
     </option>
   </component>
@@ -251,7 +259,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="430" />
     <option name="y" value="4" />
     <option name="width" value="974" />
@@ -291,8 +299,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -354,6 +364,62 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="muyu" type="462c0819:PsiDirectoryNode" />
               <item name="bms" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="muyu" type="462c0819:PsiDirectoryNode" />
+              <item name="bms" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="muyu" type="462c0819:PsiDirectoryNode" />
+              <item name="bms" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="muyu" type="462c0819:PsiDirectoryNode" />
+              <item name="bms" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="muyu" type="462c0819:PsiDirectoryNode" />
+              <item name="bms" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="muyu" type="462c0819:PsiDirectoryNode" />
+              <item name="bms" type="462c0819:PsiDirectoryNode" />
               <item name="vo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -395,6 +461,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="borrow" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -404,14 +479,52 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="commonts" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="muyu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="muyu" type="462c0819:PsiDirectoryNode" />
+              <item name="bms" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -431,17 +544,18 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://E:/code/IDEA code/BMS/src/main/resources/templates/login.html" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\code\IDEA code\BMS\src\main\resources\mybatis\mapper" />
-      <recent name="E:\code\IDEA code\BMS\src\main\resources\templates\borrow" />
-      <recent name="E:\code\IDEA code\BMS\src\main\resources\static\upload" />
-      <recent name="E:\code\IDEA code\BMS\src\main\resources\templates\book" />
-      <recent name="E:\code\IDEA code\BMS\src\main\resources\static\css" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\code\IDEA code\BMS\src\main\resources\templates\user" />
       <recent name="E:\code\IDEA code\BMS\src\main\resources\templates\book" />
       <recent name="E:\code\IDEA code\BMS\src\main\resources\templates" />
       <recent name="E:\code\IDEA code\BMS\src\main\resources\static\img" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\code\IDEA code\BMS\src\main\resources\templates\borrow" />
+      <recent name="E:\code\IDEA code\BMS\src\main\resources\mybatis\mapper" />
+      <recent name="E:\code\IDEA code\BMS\src\main\resources\static\upload" />
+      <recent name="E:\code\IDEA code\BMS\src\main\resources\templates\book" />
+      <recent name="E:\code\IDEA code\BMS\src\main\resources\static\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -462,6 +576,31 @@
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.muyu.bms.BookManagementSystemApplication" />
       <module name="BMS" />
       <envs />
+    </configuration>
+    <configuration name="BookManagementSystemApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.muyu.bms.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="BMS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.muyu.bms" />
+      <option name="MAIN_CLASS_NAME" value="com.muyu.bms.BookManagementSystemApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -545,13 +684,15 @@
       <listeners />
     </configuration>
     <configuration name="toUpdateBook.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/BMS/templates/book/toUpdateBook.html" />
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.BookManagementSystemApplication" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.toUpdateBook.html" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BookManagementSystemApplicationTests.contextLoads" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.toUpdateBook.html" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BookManagementSystemApplicationTests.contextLoads" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.toUpdateBook.html" />
       </list>
     </recent_temporary>
   </component>
@@ -602,7 +743,12 @@
       <workItem from="1611219357444" duration="99000" />
       <workItem from="1611219615983" duration="12447000" />
       <workItem from="1611274095899" duration="20095000" />
-      <workItem from="1611364305040" duration="11858000" />
+      <workItem from="1611364305040" duration="12485000" />
+      <workItem from="1611381567927" duration="1754000" />
+      <workItem from="1611392353187" duration="2939000" />
+      <workItem from="1611405245882" duration="35000" />
+      <workItem from="1611412543421" duration="28000" />
+      <workItem from="1611451785237" duration="10433000" />
     </task>
     <task id="LOCAL-00001" summary="完善了添加图书的上传图片功能&#10;增加了updateBook页面&#10;写一个toUpdateBookPage的Controller完成了修改图书信息的第一步——回显此书的数据">
       <created>1607522215857</created>
@@ -628,30 +774,61 @@
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="BookManagementSystemApplicationTests_contextLoads - 2021.01.24 at 11h 42m 20s.xml">
+      <configuration name="BookManagementSystemApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookManagementSystemApplicationTests_contextLoads - 2021.01.24 at 11h 42m 50s.xml">
+      <configuration name="BookManagementSystemApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookManagementSystemApplicationTests_contextLoads - 2021.01.24 at 11h 44m 48s.xml">
+      <configuration name="BookManagementSystemApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookManagementSystemApplicationTests_contextLoads - 2021.01.24 at 11h 44m 58s.xml">
+      <configuration name="BookManagementSystemApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookManagementSystemApplicationTests_contextLoads - 2021.01.24 at 11h 45m 06s.xml">
+      <configuration name="BookManagementSystemApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookManagementSystemApplicationTests_contextLoads - 2021.01.24 at 11h 45m 16s.xml">
+      <configuration name="BookManagementSystemApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookManagementSystemApplicationTests_contextLoads - 2021.01.24 at 11h 45m 31s.xml">
+      <configuration name="BookManagementSystemApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookManagementSystemApplicationTests_contextLoads - 2021.01.24 at 11h 45m 39s.xml">
+      <configuration name="BookManagementSystemApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookManagementSystemApplicationTests_contextLoads - 2021.01.24 at 11h 45m 44s.xml">
+      <configuration name="BookManagementSystemApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BookManagementSystemApplicationTests_contextLoads - 2021.01.24 at 12h 06m 17s.xml">
+      <configuration name="BookManagementSystemApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125437000" />
+    <option name="totallyTimeSpent" value="141253000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="430" y="4" width="974" height="1047" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272921" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16556291" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27672955" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1652452" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32089552" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3611691" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19583334" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17552084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -665,6 +842,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,25 +859,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/book/aa.html" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/upload/javabianchengsixiang.jpg" />
-    <entry file="das://table:/f1cf0fa/92d56358-38af-48cd-b39e-0caacf150ea5/bms.bms_book">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/html5/core-scripting.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-848">
           <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,19 +878,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="53" column="39" lean-forward="true" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/config/LoginHandlerIntercepor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
           <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,7 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1682">
           <caret line="66" column="23" lean-forward="true" selection-start-line="66" selection-start-column="23" selection-end-line="66" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,7 +911,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="2" column="29" lean-forward="true" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -762,7 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -770,7 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1102">
           <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,7 +962,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,9 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -850,15 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/userManagement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,39 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/modificationUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/addUser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="51" column="146" lean-forward="false" selection-start-line="51" selection-start-column="127" selection-end-line="51" selection-end-column="146" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/book/addBook.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="66" column="24" lean-forward="true" selection-start-line="66" selection-start-column="24" selection-end-line="68" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/config/MyMvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="15" column="56" lean-forward="false" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -906,30 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="68" column="86" lean-forward="false" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="86" />
-          <folding>
-            <element signature="n#style#0;n#h5#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#button#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/commonts/bar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/service/impl/BookServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="200" column="9" lean-forward="true" selection-start-line="200" selection-start-column="9" selection-end-line="200" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,14 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="8" column="53" lean-forward="true" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/f1cf0fa/92d56358-38af-48cd-b39e-0caacf150ea5/bms.bms_borrow">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -952,30 +1028,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/borrow/toBorrowBook.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="76" column="57" lean-forward="true" selection-start-line="76" selection-start-column="57" selection-end-line="76" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/book/updateBook.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1198">
-          <caret line="34" column="127" lean-forward="true" selection-start-line="34" selection-start-column="127" selection-end-line="34" selection-end-column="127" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,112 +1041,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/book/toUpdateBook.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="76" column="43" lean-forward="false" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/mapper/BorrowMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/service/BorrowService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/borrow/borrowBook.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#2;n#div#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#div#1;n#div#0;n#div#1;n#form#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/Borrow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/BorrowMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="61" lean-forward="true" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
-          <folding>
-            <marker date="1611375397123" expanded="true" signature="425:534" ph="insert into bms_borrow... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/BookController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
           <caret line="82" column="8" lean-forward="false" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1218">
-          <caret line="68" column="16" lean-forward="false" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
-          <folding>
-            <element signature="e#1109#1110#0" expanded="true" />
-            <element signature="e#1138#1139#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/BookMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="75" column="8" lean-forward="false" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="74" />
-          <folding>
-            <marker date="1611375727955" expanded="true" signature="437:607" ph="insert into bms_book... " />
-            <marker date="1611375727955" expanded="true" signature="718:793" ph="select * fro... bms_book" />
-            <marker date="1611375727955" expanded="true" signature="920:993" ph="select * fro... bms_book" />
-            <marker date="1611375727955" expanded="true" signature="1110:1443" ph="update bms_b... " />
-            <marker date="1611375727955" expanded="true" signature="1570:1635" ph="update bms_b... " />
-            <marker date="1611375727955" expanded="true" signature="1768:1863" ph="select from bms_book" />
-            <marker date="1611375727955" expanded="true" signature="1768:1865" ph="select * fro... bms_book" />
-            <marker date="1611375727955" expanded="true" signature="2006:2060" ph="select count... bms_book" />
-            <marker date="1611375727955" expanded="true" signature="2254:2364" ph="select from bms_book" />
-            <marker date="1611375727955" expanded="true" signature="2254:2366" ph="select from bms_book" />
-            <marker date="1611375727955" expanded="true" signature="2503:2536" ph="select tid,t... bms_booktype" />
-            <marker date="1611375727955" expanded="true" signature="2503:2537" ph="select tid,t... bms_booktype" />
-            <marker date="1611375727955" expanded="true" signature="2688:2743" ph="select type bms_booktype" />
-            <marker date="1611375727955" expanded="true" signature="2901:3039" ph="update bms_b... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/mapper/BookMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1106,22 +1056,230 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/service/impl/BorrowServiceImpl.java">
+    <entry file="das://table:/f1cf0fa/92d56358-38af-48cd-b39e-0caacf150ea5/bms.bms_borrow">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/modificationUser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+        <state relative-caret-position="190">
+          <caret line="31" column="67" lean-forward="false" selection-start-line="31" selection-start-column="67" selection-end-line="31" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/addUser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="40" column="65" lean-forward="false" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/book/updateBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/book/addBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="19" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/config/MyMvcConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/commonts/bar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1595">
+          <caret line="55" column="46" lean-forward="false" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/queryDocument.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/service/impl/BookServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="191" column="21" lean-forward="true" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/Borrow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/mapper/BookMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/book/toUpdateBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="91" column="28" lean-forward="false" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/borrow/toBorrowBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="89" column="51" lean-forward="false" selection-start-line="89" selection-start-column="51" selection-end-line="89" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/borrow/returnBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="163" column="13" lean-forward="false" selection-start-line="152" selection-start-column="12" selection-end-line="163" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#0;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/BorrowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+        <state relative-caret-position="412">
+          <caret line="44" column="79" lean-forward="false" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/borrow/borrowBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="132" column="26" lean-forward="false" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/BookMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="89" column="34" lean-forward="true" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1611458067485" expanded="true" signature="437:607" ph="insert into bms_book... " />
+            <marker date="1611458067485" expanded="true" signature="718:793" ph="select * fro... bms_book" />
+            <marker date="1611458067485" expanded="true" signature="920:993" ph="select * fro... bms_book" />
+            <marker date="1611458067485" expanded="true" signature="1110:1443" ph="update bms_b... " />
+            <marker date="1611458067485" expanded="true" signature="1570:1635" ph="update bms_b... " />
+            <marker date="1611458067485" expanded="true" signature="1768:1863" ph="select from bms_book" />
+            <marker date="1611458067485" expanded="true" signature="1768:1865" ph="select * fro... bms_book" />
+            <marker date="1611458067485" expanded="true" signature="2006:2060" ph="select count... bms_book" />
+            <marker date="1611458067485" expanded="true" signature="2254:2364" ph="select from bms_book" />
+            <marker date="1611458067485" expanded="true" signature="2254:2366" ph="select from bms_book" />
+            <marker date="1611458067485" expanded="true" signature="2503:2536" ph="select tid,t... bms_booktype" />
+            <marker date="1611458067485" expanded="true" signature="2503:2537" ph="select tid,t... bms_booktype" />
+            <marker date="1611458067485" expanded="true" signature="2688:2743" ph="select type bms_booktype" />
+            <marker date="1611458067485" expanded="true" signature="2913:3051" ph="update bms_b... " />
+            <marker date="1611458067485" expanded="true" signature="3219:3357" ph="update bms_b... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/muyu/bms/BookManagementSystemApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/service/BorrowService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/mapper/BorrowMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/muyu/bms/service/impl/BorrowServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="74" column="39" lean-forward="true" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/userManagement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mapper/BorrowMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <marker date="1611461960941" expanded="true" signature="1775:1900" ph="insert into bms_borrow... " />
+            <marker date="1611461960941" expanded="true" signature="2070:2335" ph="select borro... bms_borrow" />
+            <marker date="1611461960941" expanded="true" signature="2070:2355" ph="select borro... bms_borrow" />
+            <marker date="1611461960941" expanded="true" signature="2466:2589" ph="update bms_b... " />
+            <marker date="1611461960941" expanded="true" signature="2740:2825" ph="select from bms_borrow" />
           </folding>
         </state>
       </provider>

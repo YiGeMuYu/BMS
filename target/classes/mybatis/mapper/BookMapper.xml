@@ -73,12 +73,22 @@
          where tid=#{tid};
      </select>
 
-    <!--int updateBookInventoryAndBorrowNumById(@Param("bid") String bid);-->
-    <update id="updateBookInventoryAndBorrowNumById">
+    <!--int updateBorrowBookInventoryAndBorrowNumById(@Param("bid") String bid);-->
+    <update id="updateBorrowBookInventoryAndBorrowNumById">
         update bms_book
         <set>
             inventory=inventory-1,
             borrownum=borrownum+1
+        </set>
+        where bid=#{bid}
+    </update>
+
+    <!--int updateReturnBookInventoryAndBorrowNumById(@Param("bid") String bid);-->
+    <update id="updateReturnBookInventoryAndBorrowNumById">
+        update bms_book
+        <set>
+            inventory=inventory+1,
+            borrownum=borrownum-1
         </set>
         where bid=#{bid}
     </update>

@@ -7,9 +7,53 @@
         borrow_id,sid,bid,borrow_time,return_time,borrow_status
     </sql>
 
+    <resultMap id="BorrowAndBook" type="com.muyu.bms.vo.Borrow">
+        <id column="borrow_id" property="borrowId" jdbcType="INTEGER"/>
+        <result column="sid" property="sid" jdbcType="INTEGER"/>
+        <result column="bid" property="bid" jdbcType="VARCHAR"/>
+        <result column="borrow_time" property="borrowTime"/>
+        <result column="return_time" property="returnTime"/>
+        <result column="borrow_status" property="borrowStatus" jdbcType="INTEGER"/>
+        <collection property="book" ofType="com.muyu.bms.vo.Book">
+            <id column="bid" property="bid" jdbcType="VARCHAR"/>
+            <result column="bname" property="bname" jdbcType="VARCHAR"/>
+            <result column="type" property="type" jdbcType="VARCHAR"/>
+            <result column="author" property="author" jdbcType="VARCHAR"/>
+        </collection>
+    </resultMap>
+    <resultMap id="BorrowBase" type="com.muyu.bms.vo.Borrow">
+        <id column="borrow_id" property="borrowId" jdbcType="INTEGER"/>
+        <result column="sid" property="sid" jdbcType="INTEGER"/>
+        <result column="bid" property="bid" jdbcType="VARCHAR"/>
+        <result column="borrow_time" property="borrowTime"/>
+        <result column="return_time" property="returnTime"/>
+        <result column="borrow_status" property="borrowStatus" jdbcType="INTEGER"/>
+    </resultMap>
     <!--boolean borrowBook(@Param("borrow")Borrow borrow);-->
     <insert id="borrowBook">
-        insert into bms_borrow(sid,bid,borrow_time)
-        VALUES (#{borrow.sid},#{borrow.bid},#{borrow.borrowTime})
+        insert into bms_borrow(sid,bid,borrow_time,borrow_status)
+        VALUES (#{borrow.sid},#{borrow.bid},#{borrow.borrowTime},1)
     </insert>
+
+    <!--List<Borrow> queryBorrowBookListBySid(@Param("sid") Integer sid);-->
+    <select id="queryBorrowBookListBySid" resultMap="BorrowAndBook">
+        select borrow.borrow_id,borrow.sid,borrow.bid,borrow.borrow_time,borrow.return_time,borrow.borrow_status,book.bid,book.bname,book.type,book.author
+        from bms_borrow borrow
+        left join bms_book book
+        on book.bid=borrow.bid
+        where sid=#{sid} and borrow_status=1
+    </select>
+
+    <!--int returnBook(@Param("borrow")Borrow borrow);-->
+    <update id="returnBook">
+        update bms_borrow
+        SET return_time=#{borrow.returnTime},borrow_status=0
+        where borrow_id = #{borrow.borrowId}
+    </update>
+
+    <!--List<Borrow> queryBorrowBySid(@Param("sid") Integer sid);-->
+    <select id="queryBorrowBySid" resultMap="BorrowBase">
+        select <include refid="Base_column_list"/> from bms_borrow
+        where sid = #{sid}
+    </select>
 </mapper>
