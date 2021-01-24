@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>借书页面</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap-responsive.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/fullcalendar.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-style.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-media.css}" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/general.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery.gritter.css}" />
+    <style>
+        .form-horizontal {
+            padding:20px 0;
+        }
+
+    </style>
+</head>
+<body>
+<!--引入头部-->
+<div th:replace="commonts/bar::topbar"></div>
+<!--引入侧边栏-->
+<div th:replace="commonts/bar::#sidebar(active='returnBook')"></div>
+<div id="content">
+    <div th:replace="commonts/bar::#content-header(page='学生详情')"></div>
+    <div class="row-fluid">
+        <div class="widget-box">
+            <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+
+                <div class="controls">
+                    <h5 style="display: inline-block;">学生信息</h5>
+                </div>
+            </div>
+            <div class="widget-content nopadding">
+                <div class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label">姓名 :</label>
+                        <div class="controls">
+                            <input type="text" class="span4" id="sname" th:value="${student.sname}" readonly="readonly"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">年级 :</label>
+                        <div class="controls">
+                            <input type="text" class="span4" id="grade" th:value="${student.grade}" readonly="readonly"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">院系 :</label>
+                        <div class="controls">
+                            <input type="text" class="span4" id="faculty" th:value="${student.faculty}" readonly="readonly"/>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">逾期状态 :</label>
+                        <div class="controls">
+                            <input type="text" class="span4" id="studentBorrowStatus" th:value="${student.studentBorrowStatus}" readonly="readonly"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+
+        <div class="controls">
+            <h5 style="display: inline-block;">已借书籍</h5>
+        </div>
+    </div>
+    <div class="form-actions disnone">
+        <table class="table table-bordered table-striped" id="table">
+            <thead>
+            <tr>
+                <th>借书编号</th>
+                <th>书籍编号</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>类别</th>
+                <th>借书时间</th>
+                <th>还书时间</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr th:each="borrow:${borrows}">
+                    <td><center th:text="${borrow.borrowId}"></center></td>
+                    <td><center>[[${borrow.bid}]]</center></td>
+                    <td><center>[[${borrow.book.bname}]]</center></td>
+                    <td><center>[[${borrow.book.author}]]</center></td>
+                    <td><center>[[${borrow.book.type}]]</center></td>
+                    <td><center>[[${borrow.borrowTime}]]</center></td>
+                    <td><center th:text="${borrow.returnTime == null ?'未还':borrow.returnTime}"></center></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/matrix.js}"></script>
+<!--<script>-->
+    <!--function queryStudent(){-->
+        <!--var iptSid = $("#ipt_student").val();-->
+        <!--var param = "sid="+iptSid;-->
+        <!--$(".childrenTr").remove();-->
+        <!--$.post("/queryStudentBySid",param,function (data) {-->
+            <!--var jsonOBJ = eval("("+data+")");-->
+            <!--for(var i=0;i<jsonOBJ.length;i++){-->
+                <!--var sid = jsonOBJ[i].sid;-->
+                <!--var sname = jsonOBJ[i].sname;-->
+                <!--var grade = jsonOBJ[i].grade;-->
+                <!--var faculty = jsonOBJ[i].faculty;-->
+                <!--var studentBorrowStatus = jsonOBJ[i].studentBorrowStatus;-->
+                <!--$("#sid").val(sid);-->
+                <!--$("#sname").val(sname);-->
+                <!--$("#grade").val(grade);-->
+                <!--$("#faculty").val(faculty);-->
+                <!--$("#studentBorrowStatus").val(studentBorrowStatus);-->
+            <!--}-->
+            <!--queryBorrowBookBySid(iptSid);-->
+        <!--});-->
+    <!--}-->
+    <!--function queryBorrowBookBySid(sid){-->
+        <!--var param = "sid="+sid;-->
+        <!--$.post("/queryStudentAndBorrowBookBySid",param,function(data){-->
+            <!--var json = eval("("+data+")");-->
+
+            <!--$("#table").show();-->
+
+            <!--for(var i=0;i<json.length;i++){-->
+                <!--var borrowId = json[i].borrowId;-->
+                <!--var bid = json[i].bid;-->
+                <!--var bname = json[i].book.bname;-->
+                <!--var author = json[i].book.author;-->
+                <!--var type = json[i].book.type;-->
+                <!--var borrowTime = json[i].borrowTime;-->
+
+                <!--$("#tbody").append("" +-->
+                    <!--"<tr class='childrenTr'>" +-->
+                    <!--"<td><center>"+borrowId+"</center></td>" +-->
+                    <!--"<td><center>"+bid+"</center></td>" +-->
+                    <!--"<td><center>"+bname+"</center></td>" +-->
+                    <!--"<td><center>"+author+"</center></td>" +-->
+                    <!--"<td><center>"+type+"</center></td>" +-->
+                    <!--"<td><center>"+borrowTime+"</center></td>" +-->
+                    <!--"<td><center><a href='returnBook?bid="+bid+"&borrowId="+borrowId+"'><button class='btn btn-mini btn-success'>还书</button></a></center></td>" +-->
+                    <!--"</tr>")-->
+            <!--}-->
+            <!--if(json.length==0){-->
+                <!--$("#tbody").append("" +-->
+                    <!--"<tr class='childrenTr'>" +-->
+                    <!--"<td><center>无</center></td>" +-->
+                    <!--"<td><center>无</center></td>" +-->
+                    <!--"<td><center>无</center></td>" +-->
+                    <!--"<td><center>无</center></td>" +-->
+                    <!--"<td><center>无</center></td>" +-->
+                    <!--"<td><center>无</center></td>" +-->
+                    <!--"<td><center></center></td>" +-->
+                    <!--"</tr>")-->
+            <!--}-->
+        <!--})-->
+    <!--}-->
+<!--</script>-->
+</html>

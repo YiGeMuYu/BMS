@@ -15,4 +15,6 @@ public interface BorrowMapper {
 	int returnBook(@Param("borrow")Borrow borrow);
 
 	List<Borrow> queryBorrowBySid(@Param("sid") Integer sid);
+
+	List<Borrow> queryBorrowBookListBySidAndBorrowStatus(@Param("sid") Integer sid);
 }

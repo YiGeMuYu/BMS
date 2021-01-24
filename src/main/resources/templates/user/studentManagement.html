@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生账户管理页面</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap-responsive.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/fullcalendar.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-style.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-media.css}" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/general.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery.gritter.css}" />
+    <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>-->
+</head>
+<body>
+    <!--引入头部和侧边栏-->
+    <div th:replace="commonts/bar::topbar"></div>
+    <div th:replace="commonts/bar::#sidebar(active='student')"></div>
+    <!--主要内容-->
+    <div id="content">
+        <!--引入内容头部-->
+        <div th:replace="commonts/bar::#content-header(page='学生账户信息')"></div>
+        <div class="container-fluid">
+            <div class="widget-box">
+                <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+                    <h5>用户列表</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>学号</th>
+                            <th>姓名</th>
+                            <th>年级</th>
+                            <th>院系</th>
+                            <th>逾期状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="odd gradeX" th:each="student:${students}">
+                            <td><center th:text="${student.sid}"></center></td>
+                            <td><center th:text="${student.sname}"></center></td>
+                            <td><center th:text="${student.grade}"></center></td>
+                            <td><center th:text="${student.faculty}"></center></td>
+                            <td><center th:text="${student.studentBorrowStatus}"></center></td>
+                            <td>
+                                <center>
+                                    <a class="btn btn-mini btn-success" th:href="@{/toStudentDetailPage(sid=${student.sid})}">详情</a>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script th:src="@{/js/excanvas.min.js}"></script>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/jquery.ui.custom.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery.flot.min.js}"></script>
+<script th:src="@{/js/jquery.flot.resize.min.js}"></script>
+<script th:src="@{/js/jquery.peity.min.js}"></script>
+<script th:src="@{/js/fullcalendar.min.js}"></script>
+<script th:src="@{/js/matrix.js}"></script>
+<script th:src="@{/js/matrix.dashboard.js}"></script>
+<script th:src="@{/js/jquery.gritter.min.js}"></script>
+<script th:src="@{/js/matrix.chat.js}"></script>
+<script th:src="@{/js/jquery.validate.js}"></script>
+<script th:src="@{/js/matrix.form_validation.js}"></script>
+<script th:src="@{/js/jquery.wizard.js}"></script>
+<script th:src="@{/js/jquery.uniform.js}"></script>
+<script th:src="@{/js/select2.min.js}"></script>
+<script th:src="@{/js/matrix.popover.js}"></script>
+<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+<script th:src="@{/js/matrix.tables.js}"></script>
+</html>

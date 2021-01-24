@@ -16,5 +16,5 @@ public interface BorrowService {
 
 	boolean returnBook(int borrowId,String bid);
 
-
+	List<Borrow> queryBorrowBookListBySidAndBorrowStatus(Integer sid);
 }

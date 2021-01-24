@@ -41,7 +41,8 @@
         from bms_borrow borrow
         left join bms_book book
         on book.bid=borrow.bid
-        where sid=#{sid} and borrow_status=1
+        where sid=#{sid}
+        order by borrow_id
     </select>
 
     <!--int returnBook(@Param("borrow")Borrow borrow);-->
@@ -55,5 +56,15 @@
     <select id="queryBorrowBySid" resultMap="BorrowBase">
         select <include refid="Base_column_list"/> from bms_borrow
         where sid = #{sid}
+    </select>
+
+    <!--List<Borrow> queryBorrowBookListBySidAndBorrowStatus(@Param("sid") Integer sid);-->
+    <select id="queryBorrowBookListBySidAndBorrowStatus" resultMap="BorrowAndBook">
+        select borrow.borrow_id,borrow.sid,borrow.bid,borrow.borrow_time,borrow.return_time,borrow.borrow_status,book.bid,book.bname,book.type,book.author
+        from bms_borrow borrow
+        left join bms_book book
+        on book.bid=borrow.bid
+        where sid=#{sid} and borrow_status = 1
+        order by borrow_id
     </select>
 </mapper>

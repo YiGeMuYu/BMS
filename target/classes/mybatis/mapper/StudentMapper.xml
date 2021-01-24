@@ -12,4 +12,10 @@
         from bms_student where sid=#{sid}
     </select>
 
+    <!--List<Student> queryAllStudent();-->
+    <select id="queryAllStudent" resultType="Student">
+        select <include refid="Base_column_list"/>
+        from bms_student
+    </select>
+
 </mapper>

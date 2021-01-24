@@ -50,7 +50,7 @@
         <li class="submenu" > <a href="#"><i class="icon icon-th-list"></i> <span>用户管理</span> </a>
             <ul>
                 <li th:class="${active=='user'?'active':''}" > <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>管理员</span> </a></li>
-                <li th:class="${active=='student'?'active':''}" > <a th:href="@{toUserManagementPage}"><i class="icon icon-th-list"></i> <span>学生</span> </a></li>
+                <li th:class="${active=='student'?'active':''}" > <a th:href="@{queryAllStudentToManagement}"><i class="icon icon-th-list"></i> <span>学生</span> </a></li>
             </ul>
         </li>
         <li th:class="${active=='queryDocument'?'active':''}">

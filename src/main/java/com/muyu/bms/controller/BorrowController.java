@@ -51,7 +51,7 @@ public class BorrowController {
 	@RequestMapping("/queryStudentAndBorrowBookBySid")
 	@ResponseBody
 	public String queryStudentAndBorrowBookBySid(@RequestParam("sid") Integer sid){
-		List<Borrow> borrows = borrowService.queryBorrowBookListBySid(sid);
+		List<Borrow> borrows = borrowService.queryBorrowBookListBySidAndBorrowStatus(sid);
 		String s = JSONArray.fromObject(borrows).toString();
 		return s;
 	}
