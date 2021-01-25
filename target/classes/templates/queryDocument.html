@@ -12,7 +12,7 @@
     <link rel="stylesheet" th:href="@{/css/general.css}">
     <link rel="stylesheet" th:href="@{/css/jquery.gritter.css}" />
     <style>
-        #table{
+        #docUl{
             display: none;
         }
     </style>
@@ -27,25 +27,39 @@
         <div class="form-horizontal">
             <div class="control-group">
                 <div class="controls">
-                    <input type="text" class="span8" id="bookName" name="bookName" placeholder="请输入书籍名称" />
-                    <input type="submit" class="btn btn-success" value="查询" onclick="selectBookByLikeBookName()"/>
+                    <input type="text" class="span8" id="documentName" placeholder="请输入文献名称" />
+                    <input type="button" class="btn btn-success" value="查询" onclick="selectBookByLikeBookName()"/>
                 </div>
             </div>
-            <div class="form-actions disnone">
-                <table class="table table-bordered table-striped" id="table">
-                    <thead>
-                    <tr>
-                        <th>编号</th>
-                        <th>书籍名称</th>
-                        <th>作者</th>
-                        <th>库存</th>
-                        <th>操作</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tbody">
-                    </tbody>
-                </table>
+            <div class="widget-content nopadding">
+
+                <ul class="recent-posts" id="docUl">
+                    <!--<li class="bottomLine"  style="padding-bottom: 17px;">-->
+                        <!--<div class="article-post" style="height: 130px;">-->
+
+                            <!--<p class="user-info" style="padding-top:30px;"><a href="#"></a> </p>-->
+                            <!--<p class="user-info" style="padding-top:20px;"></p>-->
+
+                        <!--</div>-->
+                    <!--</li>-->
+
+                </ul>
             </div>
+            <!--<div class="form-actions disnone">-->
+                <!--<table class="table table-bordered table-striped" id="table">-->
+                    <!--<thead>-->
+                    <!--<tr>-->
+                        <!--<th>编号</th>-->
+                        <!--<th>书籍名称</th>-->
+                        <!--<th>作者</th>-->
+                        <!--<th>库存</th>-->
+                        <!--<th>操作</th>-->
+                    <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tbody id="tbody">-->
+                    <!--</tbody>-->
+                <!--</table>-->
+            <!--</div>-->
         </div>
     </div>
 </div>
@@ -53,6 +67,31 @@
 <script th:src="@{/js/jquery.min.js}"></script>
 <script th:src="@{/js/matrix.js}"></script>
 <script>
+    function selectBookByLikeBookName(){
+        var documentName = $("#documentName").val();
+        var param = "documentName="+documentName;
+        $.post("/queryDocument",param,function (data) {
+            var jsonOBJ = eval("("+data+")");
+            $(".bottomLine").remove();
+            $("#docUl").show();
+            for(var i=0;i<jsonOBJ.length;i++){
+                var title = jsonOBJ[i].title;
+                var realName = jsonOBJ[i].realName;
+                var path = jsonOBJ[i].path;
+                var publishedInformation = jsonOBJ[i].publishedInformation;
+                var discription = jsonOBJ[i].discription;
+                $("#docUl").append("" +
+                    "<li class=\"bottomLine\"  style=\"padding-bottom: 17px;padding:10px 30px;\">\n" +
+                        "<div class=\"article-post\" style=\"height: 130px;\">\n" +
+                            "<p class=\"user-info\"><h4><a href='"+path+"' target=\"_blank\">"+title+"</a></h4> </p>\n" +
+                            "<p class=\"user-info\">"+publishedInformation+"</p>\n" +
+                            "<p class=\"user-info\">"+realName+"</p>\n" +
+                            "<p class=\"user-info\">"+discription+"</p>\n" +
+                        "</div>\n" +
+                    "</li>")
+            }
 
+        })
+    }
 </script>
 </html>

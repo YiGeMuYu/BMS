@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="BMS" />
+        <module name="Jsoup" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="BMS" target="1.8" />
+      <module name="Jsoup" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

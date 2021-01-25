@@ -2,6 +2,8 @@ package com.muyu.bms.service;
 
 import com.muyu.bms.vo.Docu;
 
+import java.util.List;
+
 public interface DocuService {
-	Docu queryDocu(String documentName);
+	List<Docu> queryDocu(String documentName);
 }
