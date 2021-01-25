@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>借阅排行</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap-responsive.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/fullcalendar.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-style.css}" />
+    <link rel="stylesheet" th:href="@{/css/matrix-media.css}" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{/css/general.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery.gritter.css}" />
+    <style>
+        #display_none{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--引入头部和侧边栏-->
+<div th:replace="commonts/bar::topbar"></div>
+<div th:replace="commonts/bar::#sidebar(active='bookRank')"></div>
+<div id="content">
+    <div th:replace="commonts/bar::#content-header(page='借阅排行')"></div>
+    <div class="container-fluid">
+        <div class="widget-box">
+            <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+                <h5>本月排行</h5>
+            </div>
+            <div class="widget-content nopadding">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th>本月排名</th>
+                        <th>书籍编号</th>
+                        <th>书名</th>
+                        <th>作者</th>
+                        <th>类型</th>
+                        <th>本月借阅数量</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="odd gradeX" th:each="book,bookStatus:${books}">
+                        <td><center th:text="${bookStatus.index+1}"></center></td>
+                        <td><center th:text="${book.bid}"></center></td>
+                        <td><center th:text="${book.bname}"></center></td>
+                        <td><center th:text="${book.author}"></center></td>
+                        <td><center th:text="${book.type}"></center></td>
+                        <td><center th:text="${book.borrowNumMonth}"></center></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{/js/matrix.js}"></script>
+<script>
+
+</script>
+</html>

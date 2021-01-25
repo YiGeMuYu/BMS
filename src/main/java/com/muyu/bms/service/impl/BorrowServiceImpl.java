@@ -5,6 +5,7 @@ import com.muyu.bms.mapper.BorrowMapper;
 import com.muyu.bms.mapper.StudentMapper;
 import com.muyu.bms.service.BorrowService;
 import com.muyu.bms.util.BmsUtil;
+import com.muyu.bms.vo.Book;
 import com.muyu.bms.vo.Borrow;
 import com.muyu.bms.vo.Student;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -113,5 +114,11 @@ public class BorrowServiceImpl implements BorrowService {
 		}
 
 		return borrows;
+	}
+
+	@Override
+	public List<Book> queryBookRank() {
+		List<Book> books = borrowMapper.queryBookRank();
+		return books;
 	}
 }

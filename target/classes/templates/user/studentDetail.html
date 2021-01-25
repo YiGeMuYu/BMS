@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>借书页面</title>
+    <title>学生详情</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
     <link rel="stylesheet" th:href="@{/css/bootstrap-responsive.min.css}" />
     <link rel="stylesheet" th:href="@{/css/fullcalendar.css}" />
@@ -101,67 +101,4 @@
 </body>
 <script th:src="@{/js/jquery.min.js}"></script>
 <script th:src="@{/js/matrix.js}"></script>
-<!--<script>-->
-    <!--function queryStudent(){-->
-        <!--var iptSid = $("#ipt_student").val();-->
-        <!--var param = "sid="+iptSid;-->
-        <!--$(".childrenTr").remove();-->
-        <!--$.post("/queryStudentBySid",param,function (data) {-->
-            <!--var jsonOBJ = eval("("+data+")");-->
-            <!--for(var i=0;i<jsonOBJ.length;i++){-->
-                <!--var sid = jsonOBJ[i].sid;-->
-                <!--var sname = jsonOBJ[i].sname;-->
-                <!--var grade = jsonOBJ[i].grade;-->
-                <!--var faculty = jsonOBJ[i].faculty;-->
-                <!--var studentBorrowStatus = jsonOBJ[i].studentBorrowStatus;-->
-                <!--$("#sid").val(sid);-->
-                <!--$("#sname").val(sname);-->
-                <!--$("#grade").val(grade);-->
-                <!--$("#faculty").val(faculty);-->
-                <!--$("#studentBorrowStatus").val(studentBorrowStatus);-->
-            <!--}-->
-            <!--queryBorrowBookBySid(iptSid);-->
-        <!--});-->
-    <!--}-->
-    <!--function queryBorrowBookBySid(sid){-->
-        <!--var param = "sid="+sid;-->
-        <!--$.post("/queryStudentAndBorrowBookBySid",param,function(data){-->
-            <!--var json = eval("("+data+")");-->
-
-            <!--$("#table").show();-->
-
-            <!--for(var i=0;i<json.length;i++){-->
-                <!--var borrowId = json[i].borrowId;-->
-                <!--var bid = json[i].bid;-->
-                <!--var bname = json[i].book.bname;-->
-                <!--var author = json[i].book.author;-->
-                <!--var type = json[i].book.type;-->
-                <!--var borrowTime = json[i].borrowTime;-->
-
-                <!--$("#tbody").append("" +-->
-                    <!--"<tr class='childrenTr'>" +-->
-                    <!--"<td><center>"+borrowId+"</center></td>" +-->
-                    <!--"<td><center>"+bid+"</center></td>" +-->
-                    <!--"<td><center>"+bname+"</center></td>" +-->
-                    <!--"<td><center>"+author+"</center></td>" +-->
-                    <!--"<td><center>"+type+"</center></td>" +-->
-                    <!--"<td><center>"+borrowTime+"</center></td>" +-->
-                    <!--"<td><center><a href='returnBook?bid="+bid+"&borrowId="+borrowId+"'><button class='btn btn-mini btn-success'>还书</button></a></center></td>" +-->
-                    <!--"</tr>")-->
-            <!--}-->
-            <!--if(json.length==0){-->
-                <!--$("#tbody").append("" +-->
-                    <!--"<tr class='childrenTr'>" +-->
-                    <!--"<td><center>无</center></td>" +-->
-                    <!--"<td><center>无</center></td>" +-->
-                    <!--"<td><center>无</center></td>" +-->
-                    <!--"<td><center>无</center></td>" +-->
-                    <!--"<td><center>无</center></td>" +-->
-                    <!--"<td><center>无</center></td>" +-->
-                    <!--"<td><center></center></td>" +-->
-                    <!--"</tr>")-->
-            <!--}-->
-        <!--})-->
-    <!--}-->
-<!--</script>-->
 </html>

@@ -55,6 +55,7 @@ public class LoginController {
 		if(student!=null){
 			session.setAttribute("loginSession",student.getSname());
 			session.setAttribute("rank","student");
+			session.setAttribute("sid",sid);
 			return "redirect:queryAllBookToIndex";
 		}
 		model.addAttribute("loginErrMsg","学号错误!");

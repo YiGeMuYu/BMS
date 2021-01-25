@@ -79,4 +79,11 @@ public class BorrowController {
 		}
 	}
 
+
+	@RequestMapping("/toBookRank")
+	public String toBookRank(Model model){
+		List<Book> books = borrowService.queryBookRank();
+		model.addAttribute("books",books);
+		return "borrow/bookRank";
+	}
 }

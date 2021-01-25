@@ -1,5 +1,6 @@
 package com.muyu.bms.mapper;
 
+import com.muyu.bms.vo.Book;
 import com.muyu.bms.vo.Borrow;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -17,4 +18,7 @@ public interface BorrowMapper {
 	List<Borrow> queryBorrowBySid(@Param("sid") Integer sid);
 
 	List<Borrow> queryBorrowBookListBySidAndBorrowStatus(@Param("sid") Integer sid);
+
+	List<Book> queryBookRank();
+
 }

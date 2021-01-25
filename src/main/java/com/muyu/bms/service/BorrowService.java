@@ -1,5 +1,6 @@
 package com.muyu.bms.service;
 
+import com.muyu.bms.vo.Book;
 import com.muyu.bms.vo.Borrow;
 import com.muyu.bms.vo.Student;
 
@@ -17,4 +18,6 @@ public interface BorrowService {
 	boolean returnBook(int borrowId,String bid);
 
 	List<Borrow> queryBorrowBookListBySidAndBorrowStatus(Integer sid);
+
+	List<Book> queryBookRank();
 }

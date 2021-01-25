@@ -11,8 +11,16 @@ public class Book {
 	private int inventory;
 	//借出去的图书数量
 	private int borrowNum;
-
 	private int bookStatus;
+	private int borrowNumMonth;
+
+	public int getBorrowNumMonth() {
+		return borrowNumMonth;
+	}
+
+	public void setBorrowNumMonth(int borrowNumMonth) {
+		this.borrowNumMonth = borrowNumMonth;
+	}
 
 	public String getBeforePicture() {
 		return beforePicture;
@@ -89,13 +97,16 @@ public class Book {
 	@Override
 	public String toString() {
 		return "Book{" +
-				"bid=" + bid +
+				"bid='" + bid + '\'' +
 				", bname='" + bname + '\'' +
 				", type='" + type + '\'' +
 				", author='" + author + '\'' +
 				", picture='" + picture + '\'' +
+				", beforePicture='" + beforePicture + '\'' +
 				", inventory=" + inventory +
 				", borrowNum=" + borrowNum +
+				", bookStatus=" + bookStatus +
+				", borrowNumMonth=" + borrowNumMonth +
 				'}';
 	}
 }

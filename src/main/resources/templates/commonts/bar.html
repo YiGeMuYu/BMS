@@ -15,11 +15,11 @@
         <ul class="nav">
             <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">欢迎[[${session.loginSession}]]</span><b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#"><i class="icon-user"></i> 我的资料</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#"><i class="icon-check"></i> 我的任务</a></li>
-                    <li class="divider"></li>
-                    <li><a href="login.html"><i class="icon-key"></i> 退出</a></li>
+                    <li th:if="${session.sid != null}"><a th:href="@{/toStudentDetailPage(sid=${session.sid})}"><i class="icon-user"></i> 我的资料</a></li>
+                    <!--<li class="divider"></li>-->
+                    <!--<li><a href="#"><i class="icon-check"></i> 我的任务</a></li>-->
+                    <!--<li class="divider"></li>-->
+                    <!--<li><a href="login.html"><i class="icon-key"></i> 退出</a></li>-->
                 </ul>
             </li>
             <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">退出</span></a></li>
@@ -33,7 +33,12 @@
         <li th:class="${active=='index'?'active':''}">
             <a th:href="@{queryAllBookToIndex}"><i class="icon icon-home"></i> <span>查看书籍</span></a>
         </li>
-
+        <li th:class="${active=='queryDocument'?'active':''}">
+            <a th:href="@{queryDocument.html}"><i class="icon icon-home"></i> <span>查询文献</span></a>
+        </li>
+        <li th:class="${active=='bookRank'?'active':''}">
+            <a th:href="@{toBookRank}"><i class="icon icon-home"></i> <span>借阅排行</span></a>
+        </li>
         <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>图书管理</span> </a>
             <ul>
                 <li th:class="${active=='addBook'?'active':''}"> <a th:href="@{queryBookTypeToAddBook}"><i class="icon icon-signal"></i> <span>上架</span></a> </li>
@@ -53,9 +58,7 @@
                 <li th:class="${active=='student'?'active':''}" > <a th:href="@{queryAllStudentToManagement}"><i class="icon icon-th-list"></i> <span>学生</span> </a></li>
             </ul>
         </li>
-        <li th:class="${active=='queryDocument'?'active':''}">
-            <a th:href="@{queryDocument.html}"><i class="icon icon-home"></i> <span>查询文献</span></a>
-        </li>
+
 
     </ul>
 </div>
@@ -63,9 +66,9 @@
 <!--内容头部-->
 <div id="content-header">
     <div id="breadcrumb">
-        <a th:href="@{/queryAllBookToIndex}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a>
-        <a class="tip-bottom" th:text="${page}"></a>
-    </div>
+    <a th:href="@{/queryAllBookToIndex}" title="返回主页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+    <a class="tip-bottom" th:text="${page}"></a>
+</div>
 
 </div>
 

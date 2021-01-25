@@ -29,6 +29,13 @@
         <result column="return_time" property="returnTime"/>
         <result column="borrow_status" property="borrowStatus" jdbcType="INTEGER"/>
     </resultMap>
+    <resultMap id="BookAndBorrowNumMonth" type="com.muyu.bms.vo.Book">
+        <id column="bid" property="bid" jdbcType="VARCHAR"/>
+        <result column="bname" property="bname" jdbcType="VARCHAR"/>
+        <result column="type" property="type" jdbcType="VARCHAR"/>
+        <result column="author" property="author" jdbcType="VARCHAR"/>
+        <result column="num" property="borrowNumMonth" />
+    </resultMap>
     <!--boolean borrowBook(@Param("borrow")Borrow borrow);-->
     <insert id="borrowBook">
         insert into bms_borrow(sid,bid,borrow_time,borrow_status)
@@ -66,5 +73,17 @@
         on book.bid=borrow.bid
         where sid=#{sid} and borrow_status = 1
         order by borrow_id
+    </select>
+
+    <!--List<Book> queryBookRank();-->
+    <select id="queryBookRank" resultMap="BookAndBorrowNumMonth">
+        select book.bid,book.bname,book.author,book.type,count(borrow.bid) as num
+        from bms_borrow as borrow
+        join bms_book as book
+        on borrow.bid=book.bid
+        where borrow_time &lt; NOW() and borrow_time>=DATE_SUB(NOW(),INTERVAL 32 DAY)
+        group by bid
+        order by num DESC
+        LIMIT 0,3
     </select>
 </mapper>

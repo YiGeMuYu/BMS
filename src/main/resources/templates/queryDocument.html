@@ -12,7 +12,7 @@
     <link rel="stylesheet" th:href="@{/css/general.css}">
     <link rel="stylesheet" th:href="@{/css/jquery.gritter.css}" />
     <style>
-        #display_none{
+        #table{
             display: none;
         }
     </style>
@@ -23,11 +23,45 @@
 <div th:replace="commonts/bar::#sidebar(active='queryDocument')"></div>
 <div id="content">
     <div th:replace="commonts/bar::#content-header(page='查询文献')"></div>
+    <div class="widget-content nopadding">
+        <div class="form-horizontal">
+            <div class="control-group">
+                <div class="controls">
+                    <input type="text" class="span8" id="documentName" placeholder="请输入文献名称" />
+                    <input type="button" class="btn btn-success" value="查询" onclick="selectBookByLikeBookName()"/>
+                </div>
+            </div>
+            <div class="form-actions disnone">
+                <table class="table table-bordered table-striped" id="table">
+                    <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>书籍名称</th>
+                        <th>作者</th>
+                        <th>库存</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 <script th:src="@{/js/jquery.min.js}"></script>
 <script th:src="@{/js/matrix.js}"></script>
 <script>
+    function selectBookByLikeBookName(){
+        var documentName = $("#documentName").val();
+        var param = "documentName="+documentName;
+//        $(".childrenTr").remove();
+        $.post("/queryDocument",param,function (data) {
+            var jsonOBJ = eval("("+data+")");
+            $("#table").show();
 
+        })
+    }
 </script>
 </html>
