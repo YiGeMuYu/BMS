@@ -45,7 +45,7 @@
                     <h5>添加用户</h5>
                 </div>
                 <div class="widget-content nopadding">
-                    <form th:action="@{/user}" th:method="post" class="form-horizontal">
+                    <form th:action="@{/user}" th:method="post" class="form-horizontal" id="form">
                         <div class="control-group">
                             <label class="control-label">用户名 :</label>
                             <div class="controls">
@@ -76,11 +76,11 @@
                         <div class="control-group">
                             <label class="control-label">email :</label>
                             <div class="controls">
-                                <input type="email" class="span9 form-control"  placeholder="email@example.com" name="email"/>
+                                <input type="email" class="span9 form-control" id="email" placeholder="email@example.com" name="email"/>
                                 <span class="help-block">请正确填写信息</span> </div>
                         </div>
                         <div class="form-actions">
-                            <input type="submit" th:value="确认" class="btn btn-success" onsubmit="return checkSubmit()">
+                            <input type="button" id="btn" onclick="checkSubmit()" th:value="确认" class="btn btn-success">
                         </div>
                     </form>
                 </div>
@@ -91,14 +91,19 @@
 <script>
     function checkUserRepetitive() {
         var username = $("#username").val()
+
         var params = {"username":username}
         $.post("/checkUserRepetitive",params,function (result) {
             if(result){
-                $("#userHint").addClass("alert alert-danger")
-                $("#userHint").text("重复的用户名！")
+                $("#userHint").addClass("alert alert-danger");
+                $("#userHint").text("重复的用户名！");
+                $("#btn").attr("disabled",true)
+                return false;
             }else{
-                $("#userHint").removeClass("alert alert-danger")
-                $("#userHint").text("")
+                $("#userHint").removeClass("alert alert-danger");
+                $("#userHint").text("");
+                $("#btn").attr("disabled",false)
+                return true;
             }
         })
     }
@@ -107,11 +112,13 @@
         var password = $("#password").val()
         var confirmPassword = $("#confirmPassword").val()
         if(password == confirmPassword){
-            $("#passHint").removeClass("alert alert-danger")
-            $("#passHint").text("")
+            $("#passHint").removeClass("alert alert-danger");
+            $("#passHint").text("");
+            return true;
         }else{
-            $("#passHint").addClass("alert alert-danger")
-            $("#passHint").text("两次密码不一致！")
+            $("#passHint").addClass("alert alert-danger");
+            $("#passHint").text("两次密码不一致！");
+            return false;
         }
     }
 
@@ -121,15 +128,39 @@
             if (rank == 0) {
                 $("#rankHint").addClass("alert alert-danger")
                 $("#rankHint").text("用户权限不能为0")
+                return false;
             } else {
                 $("#rankHint").removeClass("alert alert-danger")
                 $("#rankHint").text("")
+                return true
             }
+        }else{
+            return false;
         }
     }
 
-    function checkSubmit(){
-        return false
+    function checkSubmit() {
+        if(checkPasswordSame()){
+            if(checkRank()){
+                if(checkNull($("#username").val(),$("#password").val(),$("#confirmPassword").val(),$("#rank").val(),$("#email").val())){
+                    $("#form").submit();
+                }else{
+                    alert("文本框内的值不能为空！")
+                }
+            }else{
+                alert("级别信息未填写，或填写错误！")
+            }
+        }else{
+            alert("两次密码必须相同！")
+        }
+    }
+
+    function checkNull(a,b,c,d,e) {
+        if(a == '' ||b == '' ||c == '' ||d == '' ||e == '' ){
+            return false;
+        }else{
+            return true;
+        }
     }
 </script>
 <script th:src="@{/js/excanvas.min.js}"></script>

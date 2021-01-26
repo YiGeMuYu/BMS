@@ -105,6 +105,10 @@
 <script>
     function queryStudent(){
         var iptSid = $("#ipt_student").val();
+        if(checkNull(iptSid)){
+            alert("学号不能为空");
+            return;
+        }
         var param = "sid="+iptSid;
         $(".childrenTr").remove();
         $.post("/queryStudentBySid",param,function (data) {
@@ -163,6 +167,13 @@
                     "</tr>")
             }
         })
+    }
+    function checkNull(component) {
+        if(component == ''){
+            return true;
+        }else{
+            return false;
+        }
     }
 </script>
 </html>

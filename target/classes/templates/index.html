@@ -39,7 +39,7 @@
                 <div class="control-group">
                     <!--<label class="control-label"></label>-->
                     <div class="controls">
-                        <form action="/queryBookByKeyword" method="post">
+                        <form action="/queryBookByKeyword" method="post" id="form">
                             <h5 style="display: inline-block;">查找书籍</h5>
                             <select class="form-control" name="selectType"
                                     style="padding: 0px 5px;margin-top: 3px;font-size: 12px; margin-left: 3px;width: 90px;">
@@ -47,10 +47,10 @@
                                 <option value="bname">书籍名称</option>
                                 <option value="author">作者名称</option>
                             </select>
-                            <input type="text" class="span3" name="keyword" placeholder="支持模糊查询"
+                            <input type="text" class="span3" id="keyword" name="keyword" placeholder="支持模糊查询"
                                    style="padding: 4px 4px; margin-top: 3px;  margin-left: 3px;font-size:12px;"/>
 
-                            <input class="btn btn-success" type="submit" value="查询"
+                            <input class="btn btn-success" type="button" id="btn_submit" value="查询" onclick="checkNull()"
                                    style="margin-bottom: 6px;font-size: 12px;padding-left: 10px;
                                    padding-right: 10px;height: 28px;line-height: 14px; margin-left: 3px;"/>
                         </form>
@@ -63,8 +63,9 @@
                     <li class="bottomLine" th:each="book:${books}" style="padding-bottom: 17px;">
                         <div class="article-post" style="height: 130px;">
                             <div class="user-thumb" style="width:90px; height: 130px;"> <img width="90" height="128" alt="User" th:src="@{${book.picture}}"> </div>
-                            <p class="user-info" style="padding-top:30px;"><a href="#"><b>[[${book.bname}]] </b> &nbsp;&nbsp;&nbsp;  [[${book.author}]] </a> </p>
-                            <p class="user-info" style="padding-top:20px;">库存：[[${book.inventory}]]件 可借阅</p>
+                            <p class="user-info" style="padding-top:20px;"><a href="#"><b>[[${book.bname}]] </b> &nbsp;&nbsp;&nbsp;  [[${book.author}]] </a> </p>
+                            <p class="user-info" style="padding-top:8px;">库存：[[${book.inventory}]]件 可借阅</p>
+                            <p class="user-info" style="padding-top:8px;">馆藏位置：[[${book.bid}]]</p>
                             <div class="fr" th:if="${session.rank=='manager'}">
                                 <a th:href="@{/queryBookToBorrowPage(bid=${book.bid})}" class="btn btn-success btn-mini">借出</a>
                                 <a th:href="@{/toUpdateBookPage(bid=${book.bid})}" class="btn btn-primary btn-mini">修改</a>
@@ -141,6 +142,15 @@ function confirmSold() {
 
     }else{
         //取消
+    }
+}
+function  checkNull() {
+    var keyword = $("#keyword").val();
+    if(keyword == ''){
+        alert("关键字不能为空");
+        $("#keyword").style.border="1px solid red";
+    }else{
+        $("#form").submit();
     }
 }
 </script>

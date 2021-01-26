@@ -24,7 +24,7 @@
                     <h5>修改书籍</h5>
                 </div>
                 <div class="widget-content nopadding">
-                    <form action="updateBook" method="post" class="form-horizontal" enctype="multipart/form-data">
+                    <form action="updateBook" method="post" class="form-horizontal" enctype="multipart/form-data" id="form">
                         <input type="hidden" name="bid" th:value="${book.bid}">
                         <input type="hidden" name="beforePicture" th:value="${book.picture}">
 
@@ -39,20 +39,20 @@
                         <div class="control-group">
                             <label class="control-label">书籍名称 :</label>
                             <div class="controls">
-                                <input type="text" class="span9" placeholder="书籍名称" name="bname" th:value="${book.bname}"/>
+                                <input type="text" class="span9" placeholder="书籍名称" id="bname" name="bname" th:value="${book.bname}"/>
                             </div>
                         </div>
 
                         <div class="control-group">
                             <label class="control-label">作者名称 :</label>
                             <div class="controls">
-                                <input type="text" class="span9" placeholder="作者名称" name="author" th:value="${book.author}"/>
+                                <input type="text" class="span9" placeholder="作者名称" id="author" name="author" th:value="${book.author}"/>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">库存 :</label>
                             <div class="controls">
-                                <input type="text" class="span9" placeholder="库存" name="inventory" th:value="${book.inventory}"/>
+                                <input type="text" class="span9" placeholder="库存" id="inventory" name="inventory" th:value="${book.inventory}"/>
                             </div>
                         </div>
                         <div class="control-group">
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <div class="form-actions">
-                            <input type="submit" class="btn btn-success" th:value="修改">
+                            <input type="button" onclick="checkNull()" class="btn btn-success" th:value="修改">
                         </div>
                     </form>
             </div>
@@ -87,6 +87,18 @@
         rd.onloadend = function(e) {
             //加载完毕之后获取结果赋值给img
             $("#display_none").html("<img src='"+this.result+"' width=\"90\" height=\"128\"/>")
+        }
+    }
+
+    function checkNull(){
+        var bname = $("#bname").val();
+        var author = $("#author").val();
+        var inventory = $("#inventory").val();
+        var file = $("#exampleFormControlFile1").val();
+        if(bname==''||author==''|inventory==''||file==''){
+            alert("请将信息填写完整");
+        }else{
+            $("#form").submit();
         }
     }
 </script>

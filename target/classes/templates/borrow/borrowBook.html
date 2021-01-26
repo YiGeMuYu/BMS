@@ -129,6 +129,11 @@
 <script>
     function queryStudent(){
         var sid = $("#ipt_student").val();
+        if(checkNull(sid)){
+            alert("学号不能为空！")
+            return;
+        }
+
         var param = "sid="+sid;
         $.post("/queryStudentBySid",param,function (data) {
             var jsonOBJ = eval("("+data+")");
@@ -145,6 +150,14 @@
                 $("#studentBorrowStatus").val(studentBorrowStatus);
             }
         });
+    }
+
+    function checkNull(component) {
+        if(component == ''){
+            return true;
+        }else{
+            return false;
+        }
     }
 </script>
 </html>

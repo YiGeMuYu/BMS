@@ -32,34 +32,9 @@
                 </div>
             </div>
             <div class="widget-content nopadding">
-
                 <ul class="recent-posts" id="docUl">
-                    <!--<li class="bottomLine"  style="padding-bottom: 17px;">-->
-                        <!--<div class="article-post" style="height: 130px;">-->
-
-                            <!--<p class="user-info" style="padding-top:30px;"><a href="#"></a> </p>-->
-                            <!--<p class="user-info" style="padding-top:20px;"></p>-->
-
-                        <!--</div>-->
-                    <!--</li>-->
-
                 </ul>
             </div>
-            <!--<div class="form-actions disnone">-->
-                <!--<table class="table table-bordered table-striped" id="table">-->
-                    <!--<thead>-->
-                    <!--<tr>-->
-                        <!--<th>编号</th>-->
-                        <!--<th>书籍名称</th>-->
-                        <!--<th>作者</th>-->
-                        <!--<th>库存</th>-->
-                        <!--<th>操作</th>-->
-                    <!--</tr>-->
-                    <!--</thead>-->
-                    <!--<tbody id="tbody">-->
-                    <!--</tbody>-->
-                <!--</table>-->
-            <!--</div>-->
         </div>
     </div>
 </div>
@@ -69,6 +44,10 @@
 <script>
     function selectBookByLikeBookName(){
         var documentName = $("#documentName").val();
+        if(checkNull($("#documentName"))){
+            alert("请输入文献关键字");
+            return;
+        }
         var param = "documentName="+documentName;
         $.post("/queryDocument",param,function (data) {
             var jsonOBJ = eval("("+data+")");
@@ -92,6 +71,14 @@
             }
 
         })
+    }
+    function checkNull(component) {
+        var c = component.val()
+        if(c == ''){
+            return true;
+        }else{
+            return false;
+        }
     }
 </script>
 </html>
