@@ -143,16 +143,15 @@
         if(checkPasswordSame()){
             if(checkRank()){
                 if(checkNull($("#username").val(),$("#password").val(),$("#confirmPassword").val(),$("#rank").val(),$("#email").val())){
-                    alert("成功")
                     $("#form").submit();
                 }else{
-                    alert("失败")
+                    alert("文本框内的值不能为空！")
                 }
             }else{
-                alert("级别信息未填写，或填写错误")
+                alert("级别信息未填写，或填写错误！")
             }
         }else{
-            alert("两次密码必须相同")
+            alert("两次密码必须相同！")
         }
     }
 

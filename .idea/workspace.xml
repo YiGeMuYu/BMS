@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="68bc869f-0e1f-476d-afae-9436ed370c94" name="Default" comment="下架图书已完成&#10;target：侧边栏的下架图书，应该可以查询到下架了的图书">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/book/toUpdateBook.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/book/updateBook.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/book/updateBook.html" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/templates/user_management.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/userManagement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/book/updateBook.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/book/updateBook.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/commonts/bar.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/commonts/bar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/muyu/bms/config/MyMvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/muyu/bms/config/MyMvcConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BMS.iml" afterPath="$PROJECT_DIR$/BMS.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/commonts/bar.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/commonts/bar.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -62,21 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="returnBook.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/borrow/returnBook.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="109" column="19" lean-forward="false" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="addUser.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/addUser.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="127" column="28" lean-forward="true" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
+            <state relative-caret-position="609">
+              <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="163" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -85,18 +75,8 @@
       <file leaf-file-name="modificationUser.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/modificationUser.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="41" column="54" lean-forward="true" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toBorrowBook.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/borrow/toBorrowBook.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="100" column="4" lean-forward="true" selection-start-line="100" selection-start-column="4" selection-end-line="106" selection-end-column="5" />
+            <state relative-caret-position="317">
+              <caret line="108" column="9" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -167,7 +147,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/BookController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/vo/Student.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/BookManagementSystemApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/modificationUser.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/userManagement.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/muyu/bms/config/MyMvcConfig.java" />
@@ -214,6 +193,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/borrow/borrowBook.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/borrow/returnBook.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/user/addUser.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/user/modificationUser.html" />
       </list>
     </option>
   </component>
@@ -300,9 +280,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -455,7 +432,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -704,6 +684,7 @@
       <workItem from="1611549573966" duration="6982000" />
       <workItem from="1611559083335" duration="7452000" />
       <workItem from="1611625172914" duration="6760000" />
+      <workItem from="1611632297072" duration="629000" />
     </task>
     <task id="LOCAL-00001" summary="完善了添加图书的上传图片功能&#10;增加了updateBook页面&#10;写一个toUpdateBookPage的Controller完成了修改图书信息的第一步——回显此书的数据">
       <created>1607522215857</created>
@@ -762,7 +743,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174442000" />
+    <option name="totallyTimeSpent" value="175071000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1023,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="18" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1094,7 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1102,11 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="81" selection-end-column="5" />
-          <folding>
-            <marker date="1611627763266" expanded="true" signature="2525:2546" ph="..." />
-            <marker date="1611627763266" expanded="true" signature="2525:2564" ph="..." />
-            <marker date="1611627763266" expanded="true" signature="2634:2648" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1114,7 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="89" column="9" lean-forward="true" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1122,7 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
           <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="100" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1130,7 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="106" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1138,7 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="133" column="19" lean-forward="true" selection-start-line="133" selection-start-column="19" selection-end-line="133" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1146,42 +1116,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="138" column="24" lean-forward="true" selection-start-line="138" selection-start-column="24" selection-end-line="138" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#2;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/borrow/returnBook.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="109" column="19" lean-forward="false" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/borrow/toBorrowBook.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="100" column="4" lean-forward="true" selection-start-line="100" selection-start-column="4" selection-end-line="106" selection-end-column="5" />
+        <state relative-caret-position="203">
+          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/borrow/returnBook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="109" column="19" lean-forward="false" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/addUser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="127" column="28" lean-forward="true" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
+        <state relative-caret-position="609">
+          <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="163" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/modificationUser.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="41" column="54" lean-forward="true" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+        <state relative-caret-position="317">
+          <caret line="108" column="9" lean-forward="true" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
           <folding />
         </state>
       </provider>

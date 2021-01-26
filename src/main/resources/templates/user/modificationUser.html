@@ -36,34 +36,34 @@
                     <h5>修改用户</h5>
                 </div>
                 <div class="widget-content nopadding">
-                    <form th:action="@{/modificationUser}" th:method="post" class="form-horizontal">
+                    <form th:action="@{/modificationUser}" th:method="post" class="form-horizontal" id="form">
                         <input type="hidden" name="id" th:value="${user.id}">
                         <div class="control-group">
                             <label class="control-label">用户名 :</label>
                             <div class="controls">
-                                <input type="text" class="span10" placeholder="User Name" name="username" th:value="${user.username}"/>
+                                <input type="text" class="span10" placeholder="User Name" id="username" name="username" th:value="${user.username}" readonly/>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">密码 :</label>
                             <div class="controls">
-                                <input type="text" class="span10" placeholder="Enter PassWord" name="password" th:value="${user.password}"/>
+                                <input type="text" class="span10" placeholder="Enter PassWord" id="password" name="password" th:value="${user.password}"/>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">级别 :</label>
                             <div class="controls">
-                                <input type="text" class="span10" placeholder="rank" name="rank" th:value="${user.rank}"/>
+                                <input type="text" class="span10" placeholder="rank" name="rank" id="rank" th:value="${user.rank}"/>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">email :</label>
                             <div class="controls">
-                                <input type="email" class="span10 form-control"  placeholder="email@example.com" name="email" th:value="${user.email}"/>
+                                <input type="email" class="span10 form-control"  placeholder="email@example.com" id="email" name="email" th:value="${user.email}"/>
                                 <span class="help-block">请正确填写信息</span> </div>
                         </div>
                         <div class="form-actions">
-                            <input type="submit" th:value="确认" class="btn btn-success">
+                            <input type="button" onclick="checkSubmit()" th:value="确认" class="btn btn-success">
                         </div>
                     </form>
                 </div>
@@ -71,6 +71,51 @@
         </div>
     </div>
 </body>
+<script>
+
+
+    function checkRank(){
+        var rank = $("#rank").val()
+        var username = $("#username").val();
+        if(rank!="") {
+            if (rank == 0) {
+                if(username=='范栩'){
+                    return true;
+                }else{
+                    $("#rankHint").addClass("alert alert-danger")
+                    $("#rankHint").text("用户权限不能为0")
+                    return false;
+                }
+
+            } else {
+                $("#rankHint").removeClass("alert alert-danger")
+                $("#rankHint").text("")
+                return true;
+            }
+        }else{
+            return false;
+        }
+    }
+
+    function checkSubmit() {
+        if(checkRank()){
+            if(checkNull($("#username").val(),$("#password").val(),$("#rank").val(),$("#email").val())){
+                $("#form").submit();
+            }else{
+                alert("文本框内的值不能为空！")
+            }
+        }else{
+            alert("级别信息未填写，或填写错误！")
+        }
+    }
+    function checkNull(a,b,c,d) {
+        if(a == '' ||b == '' ||c == '' ||d == ''){
+            return false;
+        }else{
+            return true;
+        }
+    }
+</script>
 <script th:src="@{/js/excanvas.min.js}"></script>
 <script th:src="@{/js/jquery.min.js}"></script>
 <script th:src="@{/js/jquery.ui.custom.js}"></script>
