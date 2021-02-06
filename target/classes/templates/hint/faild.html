@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>借阅排行</title>
+    <title>添加书籍</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
     <link rel="stylesheet" th:href="@{/css/bootstrap-responsive.min.css}" />
     <link rel="stylesheet" th:href="@{/css/fullcalendar.css}" />
@@ -20,36 +20,24 @@
 <body>
 <!--引入头部和侧边栏-->
 <div th:replace="commonts/bar::topbar"></div>
-<div th:replace="commonts/bar::#sidebar(active='bookRank')"></div>
+<div th:replace="commonts/bar::#sidebar"></div>
 <div id="content">
-    <div th:replace="commonts/bar::#content-header(page='借阅排行')"></div>
+    <div th:replace="commonts/bar::#content-header(page='成功')"></div>
     <div class="container-fluid">
-        <div class="widget-box">
-            <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
-                <h5>本月排行</h5>
-            </div>
-            <div class="widget-content nopadding">
-                <table class="table table-bordered table-striped">
-                    <thead>
-                    <tr>
-                        <th>本月排名</th>
-                        <th>书籍编号</th>
-                        <th>书名</th>
-                        <th>作者</th>
-                        <th>类型</th>
-                        <th>本月借阅数量</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class="odd gradeX" th:each="book,bookStatus:${books}">
-                        <td><center th:text="${bookStatus.index+1}"></center></td>
-                        <td><center th:text="${book.bid}"></center></td>
-                        <td><center th:text="${book.bname}"></center></td>
-                        <td><center th:text="${book.author}"></center></td>
-                        <td><center th:text="${book.type}"></center></td>
-                        <td><center th:text="${book.borrowNumMonth}"></center></td>
-                    </tr>
-                </table>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title"> <span class="icon"> <i class="icon-info-sign"></i> </span>
+                        <h5>失败</h5>
+                    </div>
+                    <div class="widget-content">
+                        <div class="error_ex">
+                            <h1 style="font-size: 100px;">失败</h1>
+                            <h3>当前的操作失败，请联系开发人员</h3>
+                            <p>点击按钮返回首页</p>
+                            <a class="btn btn-warning btn-big"  href="/queryAllBookToIndex">返回</a> </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -76,6 +64,28 @@
 <script th:src="@{/js/jquery.dataTables.min.js}"></script>
 <script th:src="@{/js/matrix.tables.js}"></script>
 <script>
+    function show(f){
+        var rd = new FileReader();//创建文件读取对象
+        var files = f.files[0];//获取file组件中的文件
+        rd.readAsDataURL(files);//文件读取装换为base64类型
+        $("#display_none").show();
+        rd.onloadend = function(e) {
+            //加载完毕之后获取结果赋值给img
+            $("#display_none").html("<img src='"+this.result+"' width=\"90\" height=\"128\"/>")
+        }
+    }
+    function checkNull(){
+        var bname = $("#bname").val();
+        var author = $("#author").val();
+        var inventory = $("#inventory").val();
+        var file = $("#exampleFormControlFile1").val();
+        if(bname==''||author==''|inventory==''||file==''){
+            alert("请将信息填写完整");
+        }else{
+            $("#form").submit();
+        }
 
+
+    }
 </script>
 </html>

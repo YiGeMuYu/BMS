@@ -59,23 +59,21 @@ public class BorrowController {
 
 	//借书
 	@RequestMapping("/borrowBook")
-	@ResponseBody
 	public String borrowBook(Borrow borrow){
 		if(borrowService.borrowBook(borrow)){
-			return "success";
+			return "hint/success";
 		}else{
-			return "false";
+			return "hint/faild";
 		}
 	}
 
 	//还书
 	@RequestMapping("/returnBook")
-	@ResponseBody
 	public String returnBook(@RequestParam("borrowId") int borrowId,@RequestParam("bid") String bid){
 		if(borrowService.returnBook(borrowId,bid)){
-			return "还书成功";
+			return "hint/success";
 		}else{
-			return "还书失败";
+			return "hint/faild";
 		}
 	}
 

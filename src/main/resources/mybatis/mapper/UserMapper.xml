@@ -24,7 +24,7 @@
     <!--User queryUserByUsernameAndPassword(String username ,String password);-->
     <select id="queryUserByUsernameAndPassword" resultType="User">
         select <include refid="Base_column_list"/>
-        from bms_user where username=#{username} and password=#{password}
+        from bms_user where username=#{username} and password=#{password} and rank != 99
     </select>
 
 
